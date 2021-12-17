@@ -33,7 +33,11 @@ namespace _3_GUI
             this.btn_AddHoaDon = new System.Windows.Forms.Button();
             this.dgrid_HoaDonNhap = new System.Windows.Forms.DataGridView();
             this.gbx_MatHang = new System.Windows.Forms.GroupBox();
+            this.btn_ok = new System.Windows.Forms.Button();
+            this.gbx_HangCanCapNhat = new System.Windows.Forms.GroupBox();
+            this.dgrid_HangCanCapNhat = new System.Windows.Forms.DataGridView();
             this.dgrid_MatHang = new System.Windows.Forms.DataGridView();
+            this.dtp_NhapKho = new System.Windows.Forms.DateTimePicker();
             this.gbx_ChiTietHoaDon = new System.Windows.Forms.GroupBox();
             this.label8 = new System.Windows.Forms.Label();
             this.dtp_NgayTao = new System.Windows.Forms.DateTimePicker();
@@ -60,6 +64,8 @@ namespace _3_GUI
             this.gbx_HoaDon.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgrid_HoaDonNhap)).BeginInit();
             this.gbx_MatHang.SuspendLayout();
+            this.gbx_HangCanCapNhat.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgrid_HangCanCapNhat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgrid_MatHang)).BeginInit();
             this.gbx_ChiTietHoaDon.SuspendLayout();
             this.gbx_NhaCungCap.SuspendLayout();
@@ -108,7 +114,10 @@ namespace _3_GUI
             // 
             // gbx_MatHang
             // 
+            this.gbx_MatHang.Controls.Add(this.btn_ok);
+            this.gbx_MatHang.Controls.Add(this.gbx_HangCanCapNhat);
             this.gbx_MatHang.Controls.Add(this.dgrid_MatHang);
+            this.gbx_MatHang.Controls.Add(this.dtp_NhapKho);
             this.gbx_MatHang.Dock = System.Windows.Forms.DockStyle.Right;
             this.gbx_MatHang.Location = new System.Drawing.Point(860, 0);
             this.gbx_MatHang.Name = "gbx_MatHang";
@@ -117,19 +126,60 @@ namespace _3_GUI
             this.gbx_MatHang.TabStop = false;
             this.gbx_MatHang.Text = "Mặt hàng";
             // 
+            // btn_ok
+            // 
+            this.btn_ok.Location = new System.Drawing.Point(329, 844);
+            this.btn_ok.Name = "btn_ok";
+            this.btn_ok.Size = new System.Drawing.Size(94, 29);
+            this.btn_ok.TabIndex = 4;
+            this.btn_ok.Text = "OK";
+            this.btn_ok.UseVisualStyleBackColor = true;
+            this.btn_ok.Click += new System.EventHandler(this.btn_ok_Click);
+            // 
+            // gbx_HangCanCapNhat
+            // 
+            this.gbx_HangCanCapNhat.Controls.Add(this.dgrid_HangCanCapNhat);
+            this.gbx_HangCanCapNhat.Dock = System.Windows.Forms.DockStyle.Top;
+            this.gbx_HangCanCapNhat.Location = new System.Drawing.Point(3, 566);
+            this.gbx_HangCanCapNhat.Name = "gbx_HangCanCapNhat";
+            this.gbx_HangCanCapNhat.Size = new System.Drawing.Size(444, 253);
+            this.gbx_HangCanCapNhat.TabIndex = 2;
+            this.gbx_HangCanCapNhat.TabStop = false;
+            this.gbx_HangCanCapNhat.Text = "Hàng cần cập nhật kho";
+            // 
+            // dgrid_HangCanCapNhat
+            // 
+            this.dgrid_HangCanCapNhat.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgrid_HangCanCapNhat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgrid_HangCanCapNhat.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgrid_HangCanCapNhat.Location = new System.Drawing.Point(3, 23);
+            this.dgrid_HangCanCapNhat.Name = "dgrid_HangCanCapNhat";
+            this.dgrid_HangCanCapNhat.RowHeadersWidth = 51;
+            this.dgrid_HangCanCapNhat.RowTemplate.Height = 29;
+            this.dgrid_HangCanCapNhat.Size = new System.Drawing.Size(438, 227);
+            this.dgrid_HangCanCapNhat.TabIndex = 0;
+            // 
             // dgrid_MatHang
             // 
             this.dgrid_MatHang.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgrid_MatHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgrid_MatHang.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgrid_MatHang.Dock = System.Windows.Forms.DockStyle.Top;
             this.dgrid_MatHang.Location = new System.Drawing.Point(3, 23);
             this.dgrid_MatHang.Name = "dgrid_MatHang";
             this.dgrid_MatHang.RowHeadersWidth = 51;
             this.dgrid_MatHang.RowTemplate.Height = 29;
-            this.dgrid_MatHang.Size = new System.Drawing.Size(444, 874);
+            this.dgrid_MatHang.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgrid_MatHang.Size = new System.Drawing.Size(444, 543);
             this.dgrid_MatHang.TabIndex = 0;
             this.dgrid_MatHang.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrid_MatHang_CellClick);
             this.dgrid_MatHang.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrid_MatHang_CellContentClick);
+            // 
+            // dtp_NhapKho
+            // 
+            this.dtp_NhapKho.Location = new System.Drawing.Point(27, 846);
+            this.dtp_NhapKho.Name = "dtp_NhapKho";
+            this.dtp_NhapKho.Size = new System.Drawing.Size(296, 27);
+            this.dtp_NhapKho.TabIndex = 3;
             // 
             // gbx_ChiTietHoaDon
             // 
@@ -153,7 +203,6 @@ namespace _3_GUI
             this.gbx_ChiTietHoaDon.TabIndex = 4;
             this.gbx_ChiTietHoaDon.TabStop = false;
             this.gbx_ChiTietHoaDon.Text = "Chi tiết hóa đơn nhập";
-            this.gbx_ChiTietHoaDon.Enter += new System.EventHandler(this.gbx_ChiTietHoaDon_Enter);
             // 
             // label8
             // 
@@ -386,6 +435,8 @@ namespace _3_GUI
             this.gbx_HoaDon.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgrid_HoaDonNhap)).EndInit();
             this.gbx_MatHang.ResumeLayout(false);
+            this.gbx_HangCanCapNhat.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgrid_HangCanCapNhat)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgrid_MatHang)).EndInit();
             this.gbx_ChiTietHoaDon.ResumeLayout(false);
             this.gbx_ChiTietHoaDon.PerformLayout();
@@ -426,5 +477,9 @@ namespace _3_GUI
         private System.Windows.Forms.TextBox txt_MaHoaDon;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DateTimePicker dtp_NgayTao;
+        private System.Windows.Forms.Button btn_ok;
+        private System.Windows.Forms.DateTimePicker dtp_NhapKho;
+        private System.Windows.Forms.GroupBox gbx_HangCanCapNhat;
+        private System.Windows.Forms.DataGridView dgrid_HangCanCapNhat;
     }
 }
