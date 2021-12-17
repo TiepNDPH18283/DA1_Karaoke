@@ -118,6 +118,7 @@ namespace _3_GUI
             dgrid_ChiTietHoaDonNhap.Columns[0].Visible = false;
             dgrid_ChiTietHoaDonNhap.Columns[1].Visible = false;
             dgrid_ChiTietHoaDonNhap.Columns[2].Visible = false;
+            //check id hóa đơn truyền vào có bị null hay không
             if (idHoaDon != null)
                 foreach (var x in _chiTietHoaDonNhapService.GetListChiTietHoaDonNhaps()
                     .Where(c => c.IdhoaDon == _iDHoaDon))
@@ -128,7 +129,7 @@ namespace _3_GUI
                     if (donViTInh != null && matHang != null)
                         dgrid_ChiTietHoaDonNhap.Rows.Add(x.IdchiTietHoaDonNhap, x.IdhoaDon, x.IdmatHang,
                             matHang.TenMatHang, x.SoLuong,
-                            donViTInh.TenDvt, x.DonGiaNhap + "VNĐ");
+                            donViTInh.TenDvt, x.DonGiaNhap + " VNĐ");
                 }
 
             var btnXoa = new DataGridViewButtonColumn();
@@ -155,7 +156,7 @@ namespace _3_GUI
             dgrid_HoaDonNhap.Columns[6].Visible = false;
             dgrid_HoaDonNhap.Columns[2].Visible = false;
             foreach (var x in _hoaDonNhapService.GetListHoaDonNhaps())
-                dgrid_HoaDonNhap.Rows.Add(x.Id, x.TienThanhToan + "VNĐ", x.IdnhaCc, x.NgayTao, x.NguoiTao, x.NgayCapNhap,
+                dgrid_HoaDonNhap.Rows.Add(x.Id, x.TienThanhToan + " VNĐ", x.IdnhaCc, x.NgayTao, x.NguoiTao, x.NgayCapNhap,
                     x.NguoiCapNhap);
 
             var btnCapNhat = new DataGridViewButtonColumn();
@@ -168,14 +169,15 @@ namespace _3_GUI
         public void FillDataMatHangToGrid()
         {
             dgrid_MatHang.Columns.Clear();
-            dgrid_MatHang.ColumnCount = 4;
+            dgrid_MatHang.ColumnCount = 5;
             dgrid_MatHang.Columns[0].Name = "Mã mặt hàng";
             dgrid_MatHang.Columns[1].Name = "Tên mặt hàng";
             dgrid_MatHang.Columns[2].Name = "Đơn giá";
             dgrid_MatHang.Columns[3].Name = "Số lượng hiện có";
+            dgrid_MatHang.Columns[4].Name = "Đơn vị tính";
             dgrid_MatHang.Columns[0].Visible = false;
             foreach (var x in _reMatHangService.GetListMatHangs())
-                dgrid_MatHang.Rows.Add(x.Id, x.TenMatHang, x.DonGia, x.SoLuong);
+                dgrid_MatHang.Rows.Add(x.Id, x.TenMatHang, x.DonGia + " VNĐ", x.SoLuong, _donViTinhService.GetlstDonViTinhs().FirstOrDefault(c => c.Id == x.IddonViTinh)?.TenDvt);
 
             var btnThem = new DataGridViewButtonColumn();
             btnThem.Text = "Thêm";
@@ -193,7 +195,7 @@ namespace _3_GUI
                 _iDHoaDon = _hoaDonNhapService.GetListHoaDonNhaps().FirstOrDefault(c => c.NgayTao == ngayHoaDonNhap).Id;
             gbx_ChiTietHoaDon.Enabled = true;
             gbx_HoaDon.Enabled = false;
-            gbx_MatHang.Enabled = true;
+            dgrid_MatHang.Enabled = true;
             txt_MaHoaDon.Text = null;
             txt_TienThanhToan.Text = null;
             gbx_ChiTietHoaDon.Visible = true;
