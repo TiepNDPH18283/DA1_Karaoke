@@ -211,6 +211,7 @@ namespace _3_GUI_PresentationLayer
 
         private void dgv_MatHang_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            if(e.RowIndex==-1) return;
             r = dgv_MatHang.Rows[e.RowIndex];
             if (e.ColumnIndex ==4)
             {
@@ -220,6 +221,7 @@ namespace _3_GUI_PresentationLayer
 
         private void dgv_chitietdichvu_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex == -1) return;
             r = dgv_chitietdichvu.Rows[e.RowIndex];
             if (e.ColumnIndex ==5)
             {
@@ -234,6 +236,8 @@ namespace _3_GUI_PresentationLayer
 
         int thoigiansudung()
         {
+            var dt = DateTime.Now.DayOfYear - _hoaDonBanHang.ThoiGianBatDau.Value.DayOfYear;
+            
             int x;
             x = DateTime.Now.Hour - _hoaDonBanHang.ThoiGianBatDau.Value.Hour;
             if (DateTime.Now.Minute - _hoaDonBanHang.ThoiGianBatDau.Value.Minute>=15)

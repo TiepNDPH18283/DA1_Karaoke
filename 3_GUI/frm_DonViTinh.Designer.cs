@@ -45,6 +45,8 @@ namespace _3_GUI_PresentationLayer
             this.dgv_DvTInh.AllowUserToAddRows = false;
             this.dgv_DvTInh.AllowUserToDeleteRows = false;
             this.dgv_DvTInh.AllowUserToOrderColumns = true;
+            this.dgv_DvTInh.AllowUserToResizeColumns = false;
+            this.dgv_DvTInh.AllowUserToResizeRows = false;
             this.dgv_DvTInh.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));

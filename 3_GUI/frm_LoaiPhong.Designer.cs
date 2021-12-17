@@ -47,7 +47,6 @@ namespace _3_GUI
             this.tbx_TrangThaiLoaiPhong = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.gbx_tang = new System.Windows.Forms.GroupBox();
-            this.dgv_tang = new System.Windows.Forms.DataGridView();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
@@ -62,6 +61,7 @@ namespace _3_GUI
             this.tbx_tenTang = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.laaaa = new System.Windows.Forms.Label();
+            this.dgv_tang = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_loaiPhong)).BeginInit();
             this.gbx_loaiPhong.SuspendLayout();
@@ -70,15 +70,18 @@ namespace _3_GUI
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.gbx_tang.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_tang)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_tang)).BeginInit();
             this.SuspendLayout();
             // 
             // dgv_loaiPhong
             // 
+            this.dgv_loaiPhong.AllowUserToOrderColumns = true;
+            this.dgv_loaiPhong.AllowUserToResizeColumns = false;
+            this.dgv_loaiPhong.AllowUserToResizeRows = false;
             this.dgv_loaiPhong.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_loaiPhong.BackgroundColor = System.Drawing.Color.White;
             this.dgv_loaiPhong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -184,7 +187,7 @@ namespace _3_GUI
             // 
             // gbx_loaiPhong
             // 
-            this.gbx_loaiPhong.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.gbx_loaiPhong.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.gbx_loaiPhong.Controls.Add(this.pictureBox7);
             this.gbx_loaiPhong.Controls.Add(this.pictureBox6);
             this.gbx_loaiPhong.Controls.Add(this.pictureBox4);
@@ -268,7 +271,7 @@ namespace _3_GUI
             // 
             // gbx_tang
             // 
-            this.gbx_tang.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.gbx_tang.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.gbx_tang.Controls.Add(this.pictureBox8);
             this.gbx_tang.Controls.Add(this.pictureBox2);
             this.gbx_tang.Controls.Add(this.pictureBox5);
@@ -291,21 +294,6 @@ namespace _3_GUI
             this.gbx_tang.TabIndex = 23;
             this.gbx_tang.TabStop = false;
             this.gbx_tang.Text = "Tầng ";
-            // 
-            // dgv_tang
-            // 
-            this.dgv_tang.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgv_tang.BackgroundColor = System.Drawing.Color.White;
-            this.dgv_tang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_tang.Location = new System.Drawing.Point(0, 555);
-            this.dgv_tang.Name = "dgv_tang";
-            this.dgv_tang.RowHeadersVisible = false;
-            this.dgv_tang.RowHeadersWidth = 51;
-            this.dgv_tang.RowTemplate.Height = 29;
-            this.dgv_tang.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_tang.Size = new System.Drawing.Size(1310, 185);
-            this.dgv_tang.TabIndex = 22;
-            this.dgv_tang.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_tang_CellClick);
             // 
             // pictureBox8
             // 
@@ -449,9 +437,28 @@ namespace _3_GUI
             this.laaaa.TabIndex = 0;
             this.laaaa.Text = "Tầng :";
             // 
+            // dgv_tang
+            // 
+            this.dgv_tang.AllowUserToOrderColumns = true;
+            this.dgv_tang.AllowUserToResizeColumns = false;
+            this.dgv_tang.AllowUserToResizeRows = false;
+            this.dgv_tang.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv_tang.BackgroundColor = System.Drawing.Color.White;
+            this.dgv_tang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_tang.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dgv_tang.Location = new System.Drawing.Point(0, 555);
+            this.dgv_tang.Name = "dgv_tang";
+            this.dgv_tang.RowHeadersVisible = false;
+            this.dgv_tang.RowHeadersWidth = 51;
+            this.dgv_tang.RowTemplate.Height = 29;
+            this.dgv_tang.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_tang.Size = new System.Drawing.Size(1310, 185);
+            this.dgv_tang.TabIndex = 22;
+            this.dgv_tang.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_tang_CellClick);
+            // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.Menu;
+            this.button1.BackColor = System.Drawing.SystemColors.Window;
             this.button1.BackgroundImage = global::_3_GUI.Properties.Resources.QuayLai;
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button1.FlatAppearance.BorderSize = 0;
@@ -467,7 +474,7 @@ namespace _3_GUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Menu;
+            this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(1310, 740);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dgv_loaiPhong);
@@ -486,11 +493,11 @@ namespace _3_GUI
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.gbx_tang.ResumeLayout(false);
             this.gbx_tang.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_tang)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_tang)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -119,7 +119,7 @@ namespace _3_GUI
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int indexRow = e.RowIndex;
-            if (indexRow < 0) return;
+            if (indexRow < 0||indexRow>= _iBUS_Phong_Service.sendlstPhong().Count) return;
             var row = dataGridView1.Rows[indexRow];
             //tbx_maLoaiPhong.Text = row.Cells[1].Value + "";
             cmb_loaiPhong.Text = row.Cells[1].Value + "";

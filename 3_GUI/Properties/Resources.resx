@@ -118,23 +118,29 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="CoKhachHat2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Image\CoKhachHat2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="pngegg - Copy" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pngegg - Copy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="9d6022f153768025ad37f51d89d29ece" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\9d6022f153768025ad37f51d89d29ece.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="CoKhachHat2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Image\CoKhachHat2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="xuong" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\xuong.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="karaoke-party-banner-layout_95169-774" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Image\karaoke-party-banner-layout_95169-774.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="karaoke2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\karaoke2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="what-does-the-number-862-mean" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Image\what-does-the-number-862-mean.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="pngegg - Copy" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pngegg - Copy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="nhap" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\nhap.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="fst-professional" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fst-professional.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="karaoke-family" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\karaoke-family.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -142,8 +148,8 @@
   <data name="25608" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\25608.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="karaoke2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\karaoke2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="karaoke-party-banner-layout_95169-774" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Image\karaoke-party-banner-layout_95169-774.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="confirm-accept-web-icon-correct-65993" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Image\confirm-accept-web-icon-correct-65993.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -163,7 +169,7 @@
   <data name="mainimage" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Image\mainimage.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="nhap" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\nhap.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icon-hang-hoa" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Image\icon-hang-hoa.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

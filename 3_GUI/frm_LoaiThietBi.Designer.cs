@@ -88,7 +88,7 @@ namespace _3_GUI
             this.dgv_LoaiThietBi.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_LoaiThietBi.Size = new System.Drawing.Size(1300, 400);
             this.dgv_LoaiThietBi.TabIndex = 0;
-            this.dgv_LoaiThietBi.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_LoaiThietBi_CellContentClick);
+            this.dgv_LoaiThietBi.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_LoaiThietBi_CellClick);
             // 
             // txt_maltb
             // 
@@ -147,7 +147,9 @@ namespace _3_GUI
             // 
             // btn_Them
             // 
-            this.btn_Them.BackColor = System.Drawing.Color.Aqua;
+            this.btn_Them.BackColor = System.Drawing.Color.MediumSpringGreen;
+            this.btn_Them.FlatAppearance.BorderSize = 0;
+            this.btn_Them.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Them.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btn_Them.Location = new System.Drawing.Point(780, 50);
             this.btn_Them.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
@@ -160,7 +162,9 @@ namespace _3_GUI
             // 
             // btn_Sua
             // 
-            this.btn_Sua.BackColor = System.Drawing.Color.Aqua;
+            this.btn_Sua.BackColor = System.Drawing.Color.MediumSpringGreen;
+            this.btn_Sua.FlatAppearance.BorderSize = 0;
+            this.btn_Sua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Sua.Location = new System.Drawing.Point(980, 50);
             this.btn_Sua.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.btn_Sua.Name = "btn_Sua";
@@ -172,7 +176,9 @@ namespace _3_GUI
             // 
             // btn_Xoa
             // 
-            this.btn_Xoa.BackColor = System.Drawing.Color.Aqua;
+            this.btn_Xoa.BackColor = System.Drawing.Color.MediumSpringGreen;
+            this.btn_Xoa.FlatAppearance.BorderSize = 0;
+            this.btn_Xoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Xoa.Location = new System.Drawing.Point(780, 130);
             this.btn_Xoa.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.btn_Xoa.Name = "btn_Xoa";
@@ -184,7 +190,9 @@ namespace _3_GUI
             // 
             // btn_luu
             // 
-            this.btn_luu.BackColor = System.Drawing.Color.Aqua;
+            this.btn_luu.BackColor = System.Drawing.Color.MediumSpringGreen;
+            this.btn_luu.FlatAppearance.BorderSize = 0;
+            this.btn_luu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_luu.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btn_luu.Location = new System.Drawing.Point(980, 130);
             this.btn_luu.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
