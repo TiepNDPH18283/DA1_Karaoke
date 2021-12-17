@@ -538,7 +538,6 @@ namespace _3_GUI
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.karaoke);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "frm_hoadon";
             this.Text = "frm_hoadon";
             this.Load += new System.EventHandler(this.frm_hoadon_Load);

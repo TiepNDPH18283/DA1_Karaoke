@@ -31,7 +31,7 @@ namespace _3_GUI
         {
             this.pl_load = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btn_dshoadon = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.btn_sanpham = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
@@ -41,41 +41,46 @@ namespace _3_GUI
             // 
             this.pl_load.BackColor = System.Drawing.SystemColors.HighlightText;
             this.pl_load.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pl_load.Location = new System.Drawing.Point(0, 0);
+            this.pl_load.Location = new System.Drawing.Point(0, 90);
             this.pl_load.Name = "pl_load";
-            this.pl_load.Size = new System.Drawing.Size(1616, 1059);
+            this.pl_load.Size = new System.Drawing.Size(1310, 810);
             this.pl_load.TabIndex = 0;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.panel2.Controls.Add(this.button2);
+            this.panel2.Controls.Add(this.btn_dshoadon);
             this.panel2.Controls.Add(this.button4);
             this.panel2.Controls.Add(this.btn_sanpham);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1616, 109);
+            this.panel2.Size = new System.Drawing.Size(1310, 90);
             this.panel2.TabIndex = 1;
             // 
-            // button2
+            // btn_dshoadon
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(433, 12);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(181, 77);
-            this.button2.TabIndex = 0;
-            this.button2.Text = "button1";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btn_dshoadon.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btn_dshoadon.FlatAppearance.BorderSize = 0;
+            this.btn_dshoadon.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.HotTrack;
+            this.btn_dshoadon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_dshoadon.Location = new System.Drawing.Point(500, 0);
+            this.btn_dshoadon.Name = "btn_dshoadon";
+            this.btn_dshoadon.Size = new System.Drawing.Size(250, 90);
+            this.btn_dshoadon.TabIndex = 0;
+            this.btn_dshoadon.Text = "DS hóa đơn";
+            this.btn_dshoadon.UseVisualStyleBackColor = false;
+            this.btn_dshoadon.Click += new System.EventHandler(this.btn_dshoadon_Click);
             // 
             // button4
             // 
             this.button4.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.HotTrack;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Location = new System.Drawing.Point(223, 12);
+            this.button4.Location = new System.Drawing.Point(250, 0);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(181, 77);
+            this.button4.Size = new System.Drawing.Size(250, 90);
             this.button4.TabIndex = 0;
             this.button4.Text = "Doanh thu";
             this.button4.UseVisualStyleBackColor = false;
@@ -83,10 +88,12 @@ namespace _3_GUI
             // btn_sanpham
             // 
             this.btn_sanpham.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btn_sanpham.FlatAppearance.BorderSize = 0;
+            this.btn_sanpham.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.HotTrack;
             this.btn_sanpham.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_sanpham.Location = new System.Drawing.Point(12, 12);
+            this.btn_sanpham.Location = new System.Drawing.Point(0, 0);
             this.btn_sanpham.Name = "btn_sanpham";
-            this.btn_sanpham.Size = new System.Drawing.Size(181, 77);
+            this.btn_sanpham.Size = new System.Drawing.Size(250, 90);
             this.btn_sanpham.TabIndex = 0;
             this.btn_sanpham.Text = "Sản phẩm";
             this.btn_sanpham.UseVisualStyleBackColor = false;
@@ -97,7 +104,7 @@ namespace _3_GUI
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.ClientSize = new System.Drawing.Size(1616, 1059);
+            this.ClientSize = new System.Drawing.Size(1310, 900);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.pl_load);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -112,7 +119,7 @@ namespace _3_GUI
 
         private System.Windows.Forms.Panel pl_load;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btn_dshoadon;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button btn_sanpham;
     }

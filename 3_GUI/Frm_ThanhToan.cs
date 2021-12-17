@@ -236,8 +236,11 @@ namespace _3_GUI_PresentationLayer
 
         int thoigiansudung()
         {
-            var dt = DateTime.Now.DayOfYear - _hoaDonBanHang.ThoiGianBatDau.Value.DayOfYear;
-            
+            int day = DateTime.Now.Day - _hoaDonBanHang.ThoiGianBatDau.Value.Day;
+            if (false)
+            {
+                
+            }
             int x;
             x = DateTime.Now.Hour - _hoaDonBanHang.ThoiGianBatDau.Value.Hour;
             if (DateTime.Now.Minute - _hoaDonBanHang.ThoiGianBatDau.Value.Minute>=15)

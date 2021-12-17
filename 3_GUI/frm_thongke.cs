@@ -38,5 +38,16 @@ namespace _3_GUI
             frmThongKeThietBi.Dock = DockStyle.Fill;
             frmThongKeThietBi.Show();
         }
+
+        private void btn_dshoadon_Click(object sender, EventArgs e)
+        {
+            pl_load.Controls.Clear();
+            frm_DShoadon frmDShoadon = new frm_DShoadon();
+            frmDShoadon.TopLevel = false;
+            pl_load.Controls.Add(frmDShoadon);
+            frmDShoadon.FormBorderStyle = FormBorderStyle.None;
+            frmDShoadon.Dock = DockStyle.Fill;
+            frmDShoadon.Show();
+        }
     }
 }
