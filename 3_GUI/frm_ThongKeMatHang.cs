@@ -3,6 +3,7 @@ using _1_DAL.Entities;
 using _2_BUS.BUS_Service;
 using _2_BUS.IBUS_MatHang_Service;
 using _2_BUS.IBUS_Service;
+using _2_BUS.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,8 +22,9 @@ namespace _3_GUI
         {
             InitializeComponent();
             _ChiTietHoaDonBan_Service = new BUS_ChiTietHoaDonBan_Service();
-            _MatHang_Service = new BUS_MatHang_Service();           
-            LoadData();
+            _MatHang_Service = new BUS_MatHang_Service();
+            LoadMBT();
+            LoadCBB();
         }
         private IBUS_ChiTietHoaDonBan_Service _ChiTietHoaDonBan_Service;
         private IBUS_MatHang_Service _MatHang_Service;
@@ -32,39 +34,76 @@ namespace _3_GUI
             {
                 var data =
                 (from a in _MatHang_Service.GetlstMatHangs()
-                 join b in _ChiTietHoaDonBan_Service.sendlstChiTietHoaDonBan() on a.Id equals b.IdmatHang
                  select new
                  {
-                     a.Id,
-                     a.TenMatHang,
-                     b.DonGia,
-                     b.SoLuong
+                     TenMatHang = a.TenMatHang,
+                     DonGia = a.DonGia,
+                     SoLuong = a.SoLuong,
+                     Ngay = a.NgayTao,
+                     Tong = a.DonGia * a.SoLuong
+
                  }).ToList();
                 dataGridView1.DataSource = data;
             }
             catch (Exception)
             {
                 throw;
-            }           
-        }      
-        private void btn_timkiem_Click(object sender, EventArgs e)
-        {
-            TimKiem();
+            }
         }
-        private void TimKiem()
+        private void btn_thongke_Click(object sender, EventArgs e)
         {
-            var data = (from a in _MatHang_Service.GetlstMatHangs()
-                        from b in _ChiTietHoaDonBan_Service.sendlstChiTietHoaDonBan()
-                        where a.Id.Equals(b.IdmatHang)
-                        && a.TenMatHang.Equals(txt_timkiem.Text)
-                        select new
-                        {
-                            a.Id,
-                            a.TenMatHang,
-                            b.DonGia,
-                            b.SoLuong
-                        }).ToList();
-            dataGridView1.DataSource = data;
+            DateTime tungay, toingay;
+            try
+            {
+                tungay = DateTime.ParseExact(mtb_tungay.Text, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
+                toingay = DateTime.ParseExact(mtb_toingay.Text, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Thời gian không hợp lệ", "Chú ý", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            try
+            {
+                if (comboBox1.Text == "Tất cả")
+                {
+                    LoadData();
+                }
+                else
+                {
+                    var data = (from a in _MatHang_Service.GetlstMatHangs().Where(x => x.NgayTao >= tungay && x.NgayCapNhap <= toingay)
+                                where a.Id.Equals(a.Id)
+                                && a.TenMatHang.Equals(comboBox1.Text)
+                                select new
+                                {
+                                    TenMatHang = a.TenMatHang,
+                                    DonGia = a.DonGia,
+                                    SoLuong = a.SoLuong,
+                                    Ngay = a.NgayTao,
+                                    Tong = a.DonGia * a.SoLuong
+                                }).ToList();
+                    dataGridView1.DataSource = data;
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+        }
+        private void LoadMBT()
+        {
+            mtb_tungay.Text = DateTime.Now.ToString("dd/MM/yyyy");
+            mtb_toingay.Text = DateTime.Now.ToString("dd/MM/yyyy");
+        }
+        private void LoadCBB()
+        {
+            comboBox1.Items.Add("Tất cả");
+            foreach (var x in _MatHang_Service.GetlstMatHangs())
+            {
+                comboBox1.Items.Add(x.TenMatHang);
+            }
         }
     }
 }
