@@ -29,7 +29,7 @@ namespace _3_GUI
             _reMatHangService = new BUS_RE_MatHang_Service();
             _nhaCungCapService = new BUS_NhaCungCap_Service();
             _donViTinhService = new BUS_DonViTinh_Service();
-            _iDNhanVien = "admin";
+            _iDNhanVien = Frm_Main.sendnhanvien().MaNv;
             txt_TienThanhToan.Text = "0";
             gbx_ChiTietHoaDon.Enabled = false;
             gbx_NhaCungCap.Enabled = false;
@@ -44,28 +44,7 @@ namespace _3_GUI
             FillDataHangCanNhap(DateTime.Now);
         }
 
-        //có tham số 
-        public frm_HoaDonNhap(string maNhanVien)
-        {
-            InitializeComponent();
-            _chiTietHoaDonNhapService = new BUS_ChiTietHoaDonNhap_Service();
-            _hoaDonNhapService = new BUS_HoaDonNhap_Service();
-            _reMatHangService = new BUS_RE_MatHang_Service();
-            _nhaCungCapService = new BUS_NhaCungCap_Service();
-            _donViTinhService = new BUS_DonViTinh_Service();
-            txt_TienThanhToan.Text = "0";
-            gbx_ChiTietHoaDon.Enabled = false;
-            gbx_NhaCungCap.Enabled = false;
-            txt_MaHoaDon.Enabled = false;
-            txt_TienThanhToan.Enabled = false;
-            dtp_NgayTao.Enabled = false;
-            gbx_ChiTietHoaDon.Visible = false;
-            dgrid_MatHang.Enabled = false;
-            FillDataNhaCungCapToCBX();
-            FillDataHoaDontoGrid();
-            FillDataMatHangToGrid();
-            FillDataHangCanNhap(DateTime.Now);
-        }
+        
 
         public void FillDataNhaCungCapToCBX()
         {
@@ -197,7 +176,7 @@ namespace _3_GUI
             gbx_HoaDon.Enabled = false;
             dgrid_MatHang.Enabled = true;
             txt_MaHoaDon.Text = null;
-            txt_TienThanhToan.Text = null;
+            txt_TienThanhToan.Text = "0";
             gbx_ChiTietHoaDon.Visible = true;
             dgrid_ChiTietHoaDonNhap.Columns.Clear();
         }
