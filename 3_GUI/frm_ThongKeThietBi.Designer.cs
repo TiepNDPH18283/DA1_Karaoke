@@ -44,12 +44,13 @@ namespace _3_GUI
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 25);
+            this.dataGridView1.Location = new System.Drawing.Point(3, 31);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 25;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1392, 450);
+            this.dataGridView1.Size = new System.Drawing.Size(1304, 602);
             this.dataGridView1.TabIndex = 0;
             // 
             // label1
@@ -57,9 +58,9 @@ namespace _3_GUI
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 40F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.Crimson;
-            this.label1.Location = new System.Drawing.Point(187, 9);
+            this.label1.Location = new System.Drawing.Point(149, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(573, 62);
+            this.label1.Size = new System.Drawing.Size(711, 76);
             this.label1.TabIndex = 1;
             this.label1.Text = "THỐNG KÊ THIẾT BỊ";
             // 
@@ -68,9 +69,11 @@ namespace _3_GUI
             this.groupBox1.Controls.Add(this.dataGridView1);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.groupBox1.Location = new System.Drawing.Point(0, 122);
+            this.groupBox1.Location = new System.Drawing.Point(0, 173);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1398, 478);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox1.Size = new System.Drawing.Size(1310, 637);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             // 
@@ -78,9 +81,10 @@ namespace _3_GUI
             // 
             this.btn_thongke.BackColor = System.Drawing.Color.Aqua;
             this.btn_thongke.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_thongke.Location = new System.Drawing.Point(1240, 80);
+            this.btn_thongke.Location = new System.Drawing.Point(692, 100);
+            this.btn_thongke.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_thongke.Name = "btn_thongke";
-            this.btn_thongke.Size = new System.Drawing.Size(155, 33);
+            this.btn_thongke.Size = new System.Drawing.Size(177, 44);
             this.btn_thongke.TabIndex = 11;
             this.btn_thongke.Text = "Thống kê";
             this.btn_thongke.UseVisualStyleBackColor = false;
@@ -90,9 +94,9 @@ namespace _3_GUI
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(817, 83);
+            this.label4.Location = new System.Drawing.Point(209, 104);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(122, 25);
+            this.label4.Size = new System.Drawing.Size(155, 32);
             this.label4.TabIndex = 12;
             this.label4.Text = "Nhập thiết bị";
             // 
@@ -100,23 +104,25 @@ namespace _3_GUI
             // 
             this.comboBox1.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(960, 80);
+            this.comboBox1.Location = new System.Drawing.Point(372, 100);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(262, 33);
+            this.comboBox1.Size = new System.Drawing.Size(299, 39);
             this.comboBox1.TabIndex = 13;
             // 
             // frm_ThongKeThietBi
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.ClientSize = new System.Drawing.Size(1398, 600);
+            this.ClientSize = new System.Drawing.Size(1310, 810);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btn_thongke);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frm_ThongKeThietBi";
             this.Text = "frm_ThongKe";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
