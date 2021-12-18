@@ -20,6 +20,7 @@ namespace _3_GUI
             _ThietBi_Service = new BUS_ThietBi_Service();
             _LoaiThietBi_Service = new BUS_LoaiThietBi_Service();
             LoadCBB();
+            LoadData();
             comboBox1.SelectedIndex = 0;
         }
         private IBUS_LoaiThietBi_Service _LoaiThietBi_Service;
@@ -39,6 +40,7 @@ namespace _3_GUI
                      Tongtien = a.SoLuong * a.DonGia
                  }).ToList();
             dataGridView1.DataSource = data;
+            LoadText();
         }
         private void LoadCBB()
         {
@@ -53,7 +55,6 @@ namespace _3_GUI
             if (comboBox1.Text == "Tất cả")
             {
                 LoadData();
-                LoadText();
             }
             else
             {

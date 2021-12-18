@@ -25,9 +25,28 @@ namespace _3_GUI
             _MatHang_Service = new BUS_MatHang_Service();
             LoadMBT();
             LoadCBB();
+            LoadData();
+            comboBox1.SelectedIndex = 0;
         }
         private IBUS_ChiTietHoaDonBan_Service _ChiTietHoaDonBan_Service;
         private IBUS_MatHang_Service _MatHang_Service;
+
+        private void LoadData()
+        {
+            var data =
+                            (from a in _MatHang_Service.GetlstMatHangs()
+                             select new
+                             {
+                                 TenMatHang = a.TenMatHang,
+                                 DonGia = a.DonGia,
+                                 SoLuong = a.SoLuong,
+                                 Ngay = a.NgayTao,
+                                 Tongtien = a.DonGia * a.SoLuong
+
+                             }).ToList();
+            dataGridView1.DataSource = data;
+            LoadText();
+        }
         private void btn_thongke_Click(object sender, EventArgs e)
         {
             DateTime tungay, toingay;
