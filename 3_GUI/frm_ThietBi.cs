@@ -77,7 +77,11 @@ namespace _3_GUI
                 !string.IsNullOrEmpty(txt_soluong.Text) || !string.IsNullOrEmpty(txt_tinhtrang.Text) || !string.IsNullOrEmpty(cmb_mltb.Text))
             {
                 ThietBi tb = new ThietBi();
-                tb.MaTb = txt_matb.Text;
+                tb.MaTb = "1";
+                if (_service.GetlstThietBis().Count != 0)
+                {
+                    tb.MaTb = _service.GetlstThietBis().Max(c => Convert.ToInt32(c.MaTb) + 1).ToString();
+                }         
                 tb.IdmaLoaiTb = _ltb[_ltb.FindIndex(x => x.MaLoaiTb == cmb_mltb.Text)].MaLoaiTb;
                 tb.TenTb = txt_tentb.Text;
                 tb.DonGia = Convert.ToInt32(txt_dongia.Text);

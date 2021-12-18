@@ -48,7 +48,11 @@ namespace _3_GUI
             if (!string.IsNullOrEmpty(txt_maltb.Text) || !string.IsNullOrEmpty(txt_tenloai.Text) || !string.IsNullOrEmpty(txt_trangthai.Text) || !string.IsNullOrEmpty(txt_xuatxu.Text)) // nếu text box k null
             {
                 LoaiThietBi ltb = new LoaiThietBi();
-                ltb.MaLoaiTb = txt_maltb.Text;
+                ltb.MaLoaiTb = "1";
+                if (_service.GetlstLoaiThietBis().Count != 0)
+                {
+                    ltb.MaLoaiTb = _service.GetlstLoaiThietBis().Max(c => Convert.ToInt32(c.MaLoaiTb) + 1).ToString();
+                }
                 ltb.TenLoai = txt_tenloai.Text;
                 ltb.XuatXu = txt_xuatxu.Text;
                 ltb.IdtranngThai = txt_trangthai.Text;
