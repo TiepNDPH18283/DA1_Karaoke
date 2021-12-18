@@ -50,6 +50,15 @@ namespace _3_GUI
                      b.XuatXu
                  }).ToList();
             dgv_QLThietBi.DataSource = data;
+            dgv_QLThietBi.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgv_QLThietBi.Columns["MaTb"].HeaderText = "Mã thiết bị";
+            dgv_QLThietBi.Columns["MaLoaiTb"].HeaderText = "Loại thiết bị";
+            dgv_QLThietBi.Columns["TenTb"].HeaderText = "Tên thiết bị";
+            dgv_QLThietBi.Columns["DonGia"].HeaderText = "Đơn giá";
+            dgv_QLThietBi.Columns["SoLuong"].HeaderText = "Số lượng";
+            dgv_QLThietBi.Columns["TinhTrang"].HeaderText = "Trạng thái";
+            dgv_QLThietBi.Columns["XuatXu"].HeaderText = "Xuất xứ";
+
         }
         private void loadcmbIDDVT()
         {
@@ -60,17 +69,7 @@ namespace _3_GUI
             }
         }
         private DataGridViewRow data;
-        private void dgv_QLThietBi_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex == -1) return;
-            data = dgv_QLThietBi.Rows[e.RowIndex];
-            txt_matb.Text = data.Cells["MaTb"].Value.ToString();
-            txt_tentb.Text = data.Cells["TenTb"].Value.ToString();
-            txt_dongia.Text = data.Cells["DonGia"].Value.ToString();
-            txt_tinhtrang.Text = data.Cells["TinhTrang"].Value.ToString();
-            txt_soluong.Text = data.Cells["SoLuong"].Value.ToString();
-            cmb_mltb.Text = data.Cells["MaLoaiTb"].Value.ToString();
-        }
+        
 
         private void btn_Them_Click(object sender, EventArgs e)
         {
@@ -176,6 +175,18 @@ namespace _3_GUI
         private void btn_themloaithietbi_Click(object sender, EventArgs e)
         {
             frm_menuDanhMuc.loadloaithietbi();
+        }
+
+        private void dgv_QLThietBi_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex == -1) return;
+            data = dgv_QLThietBi.Rows[e.RowIndex];
+            txt_matb.Text = data.Cells["MaTb"].Value.ToString();
+            txt_tentb.Text = data.Cells["TenTb"].Value.ToString();
+            txt_dongia.Text = data.Cells["DonGia"].Value.ToString();
+            txt_tinhtrang.Text = data.Cells["TinhTrang"].Value.ToString();
+            txt_soluong.Text = data.Cells["SoLuong"].Value.ToString();
+            cmb_mltb.Text = data.Cells["MaLoaiTb"].Value.ToString();
         }
     }
 }

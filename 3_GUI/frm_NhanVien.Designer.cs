@@ -29,6 +29,9 @@ namespace _3_GUI
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_NhanVien));
             this.dgr_NhanVien = new System.Windows.Forms.DataGridView();
             this.panel_dgr_NhanVien = new System.Windows.Forms.Panel();
@@ -81,12 +84,38 @@ namespace _3_GUI
             // 
             // dgr_NhanVien
             // 
+            this.dgr_NhanVien.AllowUserToResizeColumns = false;
+            this.dgr_NhanVien.AllowUserToResizeRows = false;
             this.dgr_NhanVien.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dgr_NhanVien.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgr_NhanVien.BackgroundColor = System.Drawing.SystemColors.ScrollBar;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgr_NhanVien.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgr_NhanVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgr_NhanVien.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgr_NhanVien.Location = new System.Drawing.Point(0, 45);
             this.dgr_NhanVien.Name = "dgr_NhanVien";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.MenuText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgr_NhanVien.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgr_NhanVien.RowHeadersVisible = false;
             this.dgr_NhanVien.RowHeadersWidth = 51;
             this.dgr_NhanVien.RowTemplate.Height = 29;
@@ -222,7 +251,9 @@ namespace _3_GUI
             // 
             // btn_Luu
             // 
-            this.btn_Luu.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btn_Luu.BackColor = System.Drawing.Color.SpringGreen;
+            this.btn_Luu.FlatAppearance.BorderSize = 0;
+            this.btn_Luu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Luu.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_Luu.ForeColor = System.Drawing.Color.White;
             this.btn_Luu.Location = new System.Drawing.Point(730, 15);
@@ -236,6 +267,8 @@ namespace _3_GUI
             // btn_Xoa
             // 
             this.btn_Xoa.BackColor = System.Drawing.Color.Aqua;
+            this.btn_Xoa.FlatAppearance.BorderSize = 0;
+            this.btn_Xoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Xoa.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_Xoa.Location = new System.Drawing.Point(350, 15);
             this.btn_Xoa.Name = "btn_Xoa";
@@ -248,6 +281,8 @@ namespace _3_GUI
             // btn_Sua
             // 
             this.btn_Sua.BackColor = System.Drawing.Color.Aqua;
+            this.btn_Sua.FlatAppearance.BorderSize = 0;
+            this.btn_Sua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Sua.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_Sua.Location = new System.Drawing.Point(540, 15);
             this.btn_Sua.Name = "btn_Sua";
@@ -522,7 +557,7 @@ namespace _3_GUI
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.Window;
+            this.panel1.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.pictureBox4);
             this.panel1.Controls.Add(this.btn_Luu);
@@ -549,6 +584,8 @@ namespace _3_GUI
             // btn_Them
             // 
             this.btn_Them.BackColor = System.Drawing.Color.Aqua;
+            this.btn_Them.FlatAppearance.BorderSize = 0;
+            this.btn_Them.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Them.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_Them.Location = new System.Drawing.Point(160, 15);
             this.btn_Them.Name = "btn_Them";

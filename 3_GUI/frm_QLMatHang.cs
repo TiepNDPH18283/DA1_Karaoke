@@ -42,6 +42,11 @@ namespace _3_GUI_PresentationLayer
             showdata();
             loadcmbIDDVT();
             dgv_QLMatHang.Columns["Id"].Visible = false;
+            dgv_QLMatHang.Columns["TenMatHang"].HeaderText = "Tên mặt hàng";
+            dgv_QLMatHang.Columns["DonGia"].HeaderText = "Đơn giá";
+            dgv_QLMatHang.Columns["TenDvt"].HeaderText = "Tên DVT";
+            dgv_QLMatHang.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
         }
         private void btn_Them_Click(object sender, EventArgs e)
         {
@@ -55,6 +60,7 @@ namespace _3_GUI_PresentationLayer
                 }
                 matHang.TenMatHang = txt_TenMH.Text;
                 matHang.DonGia =Convert.ToInt32(txt_DonGia.Text);
+                matHang.SoLuong = int.Parse(txt_soluong.Text);
                 matHang.IddonViTinh = _donViTinhService.GetlstDonViTinhs().SingleOrDefault(c=>c.TenDvt==cmb_IDDvTinh.Text).Id;
                 matHang.NguoiTao = Frm_Main.sendnhanvien().Ten;
                 matHang.NgayTao = DateTime.Now;
@@ -78,6 +84,7 @@ namespace _3_GUI_PresentationLayer
             txt_TenMH.Text = r.Cells["TenMatHang"].Value.ToString();
             txt_DonGia.Text = r.Cells["DonGia"].Value.ToString();
             cmb_IDDvTinh.Text = r.Cells["TenDvt"].Value.ToString();
+            txt_soluong.Text = r.Cells["Soluong"].Value.ToString();
         }
 
         private MatHang findMatHang()
@@ -101,6 +108,7 @@ namespace _3_GUI_PresentationLayer
                 mh.TenMatHang = txt_TenMH.Text;
                 mh.DonGia =int.Parse(txt_DonGia.Text);
                 mh.IddonViTinh = _donViTinhService.GetlstDonViTinhs().SingleOrDefault(c => c.TenDvt == cmb_IDDvTinh.Text).Id;
+                mh.SoLuong = int.Parse(txt_soluong.Text);
                 mh.NgayCapNhap=DateTime.Now;
                 mh.NguoiCapNhap = Frm_Main.sendnhanvien().Ten;
                 if (_matHangService.EditMatHang(mh))
@@ -167,13 +175,7 @@ namespace _3_GUI_PresentationLayer
             }
         }
 
-        private void cmb_IDDvTinh_Click(object sender, EventArgs e)
-        {
-            cmb_IDDvTinh.Items.Clear();
-            loadcmbIDDVT();
-        }
-        
-        private void btn_themdvt_Click_1(object sender, EventArgs e)
+        private void btn_themdvt_Click(object sender, EventArgs e)
         {
             frm_menuDanhMuc.loadDVT();
         }

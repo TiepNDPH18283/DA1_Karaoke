@@ -29,12 +29,14 @@ namespace _3_GUI_PresentationLayer
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_QLMatHang));
             this.lb_nhanvien = new System.Windows.Forms.Label();
             this.dgv_QLMatHang = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -48,8 +50,11 @@ namespace _3_GUI_PresentationLayer
             this.btn_Them = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.txt_DonGia = new System.Windows.Forms.TextBox();
+            this.txt_soluong = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_QLMatHang)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -67,23 +72,31 @@ namespace _3_GUI_PresentationLayer
             // 
             // dgv_QLMatHang
             // 
+            this.dgv_QLMatHang.AllowUserToOrderColumns = true;
             this.dgv_QLMatHang.AllowUserToResizeColumns = false;
             this.dgv_QLMatHang.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.NullValue = null;
-            this.dgv_QLMatHang.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.NullValue = null;
+            this.dgv_QLMatHang.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgv_QLMatHang.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_QLMatHang.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dgv_QLMatHang.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.MenuText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_QLMatHang.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.MenuText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_QLMatHang.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgv_QLMatHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_QLMatHang.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnKeystroke;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_QLMatHang.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgv_QLMatHang.Location = new System.Drawing.Point(5, 240);
             this.dgv_QLMatHang.MultiSelect = false;
             this.dgv_QLMatHang.Name = "dgv_QLMatHang";
@@ -98,6 +111,7 @@ namespace _3_GUI_PresentationLayer
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.pictureBox3);
             this.panel1.Controls.Add(this.lb_nhanvien);
             this.panel1.Controls.Add(this.pictureBox5);
@@ -110,12 +124,24 @@ namespace _3_GUI_PresentationLayer
             this.panel1.Controls.Add(this.btn_Sua);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.btn_Them);
+            this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.txt_soluong);
             this.panel1.Controls.Add(this.txt_DonGia);
             this.panel1.Location = new System.Drawing.Point(5, 5);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1300, 230);
             this.panel1.TabIndex = 16;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::_3_GUI.Properties.Resources.icon_hang_hoa;
+            this.pictureBox2.Location = new System.Drawing.Point(80, 40);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(160, 160);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 28;
+            this.pictureBox2.TabStop = false;
             // 
             // pictureBox3
             // 
@@ -135,7 +161,7 @@ namespace _3_GUI_PresentationLayer
             this.pictureBox5.Location = new System.Drawing.Point(1108, 155);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(40, 40);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox5.TabIndex = 26;
             this.pictureBox5.TabStop = false;
             // 
@@ -155,7 +181,7 @@ namespace _3_GUI_PresentationLayer
             this.txt_TenMH.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_TenMH.BackColor = System.Drawing.SystemColors.ControlLight;
             this.txt_TenMH.Font = new System.Drawing.Font("Times New Roman", 16.3F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txt_TenMH.Location = new System.Drawing.Point(553, 35);
+            this.txt_TenMH.Location = new System.Drawing.Point(553, 25);
             this.txt_TenMH.Multiline = true;
             this.txt_TenMH.Name = "txt_TenMH";
             this.txt_TenMH.Size = new System.Drawing.Size(480, 40);
@@ -167,7 +193,7 @@ namespace _3_GUI_PresentationLayer
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(316, 35);
+            this.label1.Location = new System.Drawing.Point(316, 27);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(208, 35);
             this.label1.TabIndex = 17;
@@ -180,12 +206,13 @@ namespace _3_GUI_PresentationLayer
             this.btn_themdvt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_themdvt.Font = new System.Drawing.Font("Times New Roman", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.btn_themdvt.ForeColor = System.Drawing.Color.White;
-            this.btn_themdvt.Location = new System.Drawing.Point(918, 90);
+            this.btn_themdvt.Location = new System.Drawing.Point(918, 75);
             this.btn_themdvt.Name = "btn_themdvt";
             this.btn_themdvt.Size = new System.Drawing.Size(115, 40);
             this.btn_themdvt.TabIndex = 24;
             this.btn_themdvt.Text = "Thêm";
             this.btn_themdvt.UseVisualStyleBackColor = false;
+            this.btn_themdvt.Click += new System.EventHandler(this.btn_themdvt_Click);
             // 
             // btn_Xoa
             // 
@@ -201,6 +228,7 @@ namespace _3_GUI_PresentationLayer
             this.btn_Xoa.TabIndex = 22;
             this.btn_Xoa.Text = "      Xóa";
             this.btn_Xoa.UseVisualStyleBackColor = false;
+            this.btn_Xoa.Click += new System.EventHandler(this.btn_Xoa_Click);
             // 
             // cmb_IDDvTinh
             // 
@@ -208,7 +236,7 @@ namespace _3_GUI_PresentationLayer
             this.cmb_IDDvTinh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_IDDvTinh.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cmb_IDDvTinh.IntegralHeight = false;
-            this.cmb_IDDvTinh.Location = new System.Drawing.Point(553, 90);
+            this.cmb_IDDvTinh.Location = new System.Drawing.Point(553, 75);
             this.cmb_IDDvTinh.Name = "cmb_IDDvTinh";
             this.cmb_IDDvTinh.Size = new System.Drawing.Size(350, 39);
             this.cmb_IDDvTinh.TabIndex = 23;
@@ -227,6 +255,7 @@ namespace _3_GUI_PresentationLayer
             this.btn_Sua.TabIndex = 21;
             this.btn_Sua.Text = "      Sửa";
             this.btn_Sua.UseVisualStyleBackColor = false;
+            this.btn_Sua.Click += new System.EventHandler(this.btn_Sua_Click);
             // 
             // label3
             // 
@@ -234,7 +263,7 @@ namespace _3_GUI_PresentationLayer
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(348, 91);
+            this.label3.Location = new System.Drawing.Point(348, 80);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(176, 35);
             this.label3.TabIndex = 19;
@@ -254,6 +283,7 @@ namespace _3_GUI_PresentationLayer
             this.btn_Them.TabIndex = 20;
             this.btn_Them.Text = "      Thêm";
             this.btn_Them.UseVisualStyleBackColor = false;
+            this.btn_Them.Click += new System.EventHandler(this.btn_Them_Click);
             // 
             // label2
             // 
@@ -261,7 +291,7 @@ namespace _3_GUI_PresentationLayer
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(390, 145);
+            this.label2.Location = new System.Drawing.Point(390, 130);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(134, 35);
             this.label2.TabIndex = 18;
@@ -272,11 +302,34 @@ namespace _3_GUI_PresentationLayer
             this.txt_DonGia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_DonGia.BackColor = System.Drawing.SystemColors.ControlLight;
             this.txt_DonGia.Font = new System.Drawing.Font("Times New Roman", 16.3F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txt_DonGia.Location = new System.Drawing.Point(553, 145);
+            this.txt_DonGia.Location = new System.Drawing.Point(553, 125);
             this.txt_DonGia.Multiline = true;
             this.txt_DonGia.Name = "txt_DonGia";
             this.txt_DonGia.Size = new System.Drawing.Size(350, 40);
             this.txt_DonGia.TabIndex = 16;
+            // 
+            // txt_soluong
+            // 
+            this.txt_soluong.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_soluong.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.txt_soluong.Font = new System.Drawing.Font("Times New Roman", 16.3F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txt_soluong.Location = new System.Drawing.Point(553, 175);
+            this.txt_soluong.Multiline = true;
+            this.txt_soluong.Name = "txt_soluong";
+            this.txt_soluong.Size = new System.Drawing.Size(350, 40);
+            this.txt_soluong.TabIndex = 16;
+            // 
+            // label4
+            // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.Location = new System.Drawing.Point(390, 180);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(129, 35);
+            this.label4.TabIndex = 18;
+            this.label4.Text = "Số lượng";
             // 
             // frm_QLMatHang
             // 
@@ -293,6 +346,7 @@ namespace _3_GUI_PresentationLayer
             ((System.ComponentModel.ISupportInitialize)(this.dgv_QLMatHang)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -317,5 +371,8 @@ namespace _3_GUI_PresentationLayer
         private System.Windows.Forms.Button btn_Them;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txt_DonGia;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txt_soluong;
     }
 }

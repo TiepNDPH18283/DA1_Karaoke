@@ -113,6 +113,26 @@ namespace _3_GUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap fst_professional {
+            get {
+                object obj = ResourceManager.GetObject("fst-professional", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_hang_hoa {
+            get {
+                object obj = ResourceManager.GetObject("icon-hang-hoa", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap karaoke_family {
             get {
                 object obj = ResourceManager.GetObject("karaoke-family", resourceCulture);

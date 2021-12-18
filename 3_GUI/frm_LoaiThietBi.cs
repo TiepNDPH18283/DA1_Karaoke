@@ -68,15 +68,7 @@ namespace _3_GUI
         }
 
         private DataGridViewRow dt;
-        private void dgv_LoaiThietBi_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex == -1) return;
-            dt = dgv_LoaiThietBi.Rows[e.RowIndex];
-            txt_maltb.Text = dt.Cells["MaLoaiTB"].Value.ToString();
-            txt_tenloai.Text = dt.Cells["TenLoai"].Value.ToString();
-            txt_xuatxu.Text = dt.Cells["XuatXu"].Value.ToString();
-            txt_trangthai.Text = dt.Cells["IdtranngThai"].Value.ToString();
-        }
+    
 
         private void btn_Xoa_Click(object sender, EventArgs e)
         {
@@ -134,6 +126,16 @@ namespace _3_GUI
         private void btn_dong_Click(object sender, EventArgs e)
         {
             frm_menuDanhMuc.loadthietbi();
+        }
+
+        private void dgv_LoaiThietBi_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex == -1) return;
+            dt = dgv_LoaiThietBi.Rows[e.RowIndex];
+            txt_maltb.Text = dt.Cells["MaLoaiTB"].Value.ToString();
+            txt_tenloai.Text = dt.Cells["TenLoai"].Value.ToString();
+            txt_xuatxu.Text = dt.Cells["XuatXu"].Value.ToString();
+            txt_trangthai.Text = dt.Cells["IdtranngThai"].Value.ToString();
         }
     }
 }
