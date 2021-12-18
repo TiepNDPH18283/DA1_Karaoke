@@ -65,7 +65,7 @@ namespace _3_GUI_PresentationLayer
                 .TenLoaiPhong;
             lb_dongiaphong.Text= _loaiphong_Service.sendlstLoaiPhong().SingleOrDefault(c => c.Id == _phong.IdloaiPhong)
                 .DonGia.ToString();
-            lb_timestart.Text = _hoaDonBanHang.NgayTao.Value.ToLongTimeString();
+            lb_timestart.Text = _hoaDonBanHang.ThoiGianBatDau.Value.ToLongTimeString();
             lb_tienphong.Text = tienphongused().ToString();
         }
         private void loadtien()
@@ -101,6 +101,11 @@ namespace _3_GUI_PresentationLayer
         private void showdata()
         {
             dgv_MatHang.Columns.Clear();
+            dgv_MatHang.ColumnCount = 4;
+            dgv_MatHang.Columns[0].Name = "Id";
+            dgv_MatHang.Columns[1].Name = "Tên mặt hàng";
+            dgv_MatHang.Columns[2].Name = "Đơn giá";
+            dgv_MatHang.Columns[3].Name = "Số lượng";
             var data =
                 (from a in _dataMatHangs
                  select new
@@ -110,22 +115,21 @@ namespace _3_GUI_PresentationLayer
                      a.DonGia,
                      a.SoLuong,
                  }).ToList();
-            DataGridViewButtonColumn btnthem = new DataGridViewButtonColumn();
+            dgv_MatHang.Columns[0].Visible = false;
+            foreach (var x in data)
+            {
+                dgv_MatHang.Rows.Add(x.Id, x.TenMatHang, x.DonGia, x.SoLuong);
+            }
+            var btnthem = new DataGridViewButtonColumn();
             btnthem.Name = "cl_btn_them";
-            btnthem.HeaderText = "";
-            btnthem.UseColumnTextForButtonValue = true;
             btnthem.Text = "Thêm";
-            dgv_MatHang.DataSource = data;
-            dgv_MatHang.Columns["Id"].Visible = false;
+            btnthem.UseColumnTextForButtonValue = true;
             dgv_MatHang.Columns.Add(btnthem);
-            dgv_MatHang.Columns["TenMatHang"].HeaderText = "Tên mặt hàng";
-            dgv_MatHang.Columns["DonGia"].HeaderText = "Đơn giá";
-            dgv_MatHang.Columns["SoLuong"].HeaderText = "Số lượng";
             dgv_MatHang.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgv_MatHang.Columns["SoLuong"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgv_MatHang.Columns["SoLuong"].Width = 100;
-            dgv_MatHang.Columns["DonGia"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-            dgv_MatHang.Columns["DonGia"].Width= 120;
+            dgv_MatHang.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgv_MatHang.Columns[3].Width = 100;
+            dgv_MatHang.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dgv_MatHang.Columns[2].Width= 120;
             dgv_MatHang.Columns[4].Width= 100;
 
 
@@ -139,11 +143,13 @@ namespace _3_GUI_PresentationLayer
         {
             dgv_chitietdichvu.Columns.Clear();
             loadtien();
-            DataGridViewButtonColumn btnxoa = new DataGridViewButtonColumn();
-            btnxoa.Name = "cl_btn_xoa";
-            btnxoa.HeaderText = "";
-            btnxoa.UseColumnTextForButtonValue = true;
-            btnxoa.Text = "Xóa";
+            dgv_chitietdichvu.ColumnCount = 5;
+            dgv_chitietdichvu.Columns[0].Name = "IdchiTietHoaDonBan";
+            dgv_chitietdichvu.Columns[1].Name = "Id";
+            dgv_chitietdichvu.Columns[2].Name = "Tên mặt hàng";
+            dgv_chitietdichvu.Columns[3].Name = "Đơn giá";
+            dgv_chitietdichvu.Columns[4].Name = "Số lượng";
+            
             var datanew = (from a in _chiTietHoaDonBanService.sendlstChiTietHoaDonBan().Where(x => x.IdhoaDon == _hoaDonBanHang.IdhoaDon)
                            join b in _matHangService.GetlstMatHangs() on a.IdmatHang equals b.Id
                            select new
@@ -154,26 +160,32 @@ namespace _3_GUI_PresentationLayer
                                a.DonGia,
                                a.SoLuong
                            }).ToList();
-            dgv_chitietdichvu.DataSource = datanew;
-            dgv_chitietdichvu.Columns["Id"].Visible = false;
-            dgv_chitietdichvu.Columns["IdchiTietHoaDonBan"].Visible = false;
+            dgv_chitietdichvu.Columns[0].Visible = false;
+            dgv_chitietdichvu.Columns[1].Visible = false;
+            dgv_chitietdichvu.Columns[0].Visible = false;
+            foreach (var c in datanew)
+            {
+                dgv_chitietdichvu.Rows.Add(c.IdchiTietHoaDonBan, c.Id, c.TenMatHang, c.DonGia, c.SoLuong);
+            }
+            DataGridViewButtonColumn btnxoa = new DataGridViewButtonColumn();
+            btnxoa.Name = "cl_btn_xoa";
+            btnxoa.HeaderText = "";
+            btnxoa.UseColumnTextForButtonValue = true;
+            btnxoa.Text = "Xóa";
             dgv_chitietdichvu.Columns.Add(btnxoa);
-            dgv_chitietdichvu.Columns["TenMatHang"].HeaderText = "Tên mặt hàng";
-            dgv_chitietdichvu.Columns["DonGia"].HeaderText = "Đơn giá";
-            dgv_chitietdichvu.Columns["SoLuong"].HeaderText = "Số lượng";
             dgv_chitietdichvu.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgv_chitietdichvu.Columns["SoLuong"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgv_chitietdichvu.Columns["SoLuong"].Width = 100;
-            dgv_chitietdichvu.Columns["DonGia"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-            dgv_chitietdichvu.Columns["DonGia"].Width = 120;
+            dgv_chitietdichvu.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgv_chitietdichvu.Columns[4].Width = 100;
+            dgv_chitietdichvu.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dgv_chitietdichvu.Columns[3].Width = 120;
             dgv_chitietdichvu.Columns[5].Width = 100;
         }
         private void adddichvu(DataGridViewRow x)
         {
             ChiTietHoaDonBan newChiTietHoaDonBan = new ChiTietHoaDonBan();
             newChiTietHoaDonBan.IdhoaDon = _hoaDonBanHang.IdhoaDon;
-            newChiTietHoaDonBan.IdmatHang = int.Parse(r.Cells["Id"].Value.ToString());
-            newChiTietHoaDonBan.DonGia = int.Parse(r.Cells["DonGia"].Value.ToString());
+            newChiTietHoaDonBan.IdmatHang = int.Parse(r.Cells[0].Value.ToString());
+            newChiTietHoaDonBan.DonGia = int.Parse(r.Cells[2].Value.ToString());
             if (_matHangService.GetlstMatHangs().SingleOrDefault(c => c.Id == newChiTietHoaDonBan.IdmatHang).SoLuong == 0)
             {
                 MessageBox.Show("hết hàng", "thông báo", MessageBoxButtons.OK);
@@ -188,45 +200,19 @@ namespace _3_GUI_PresentationLayer
         {
             //newChiTietHoaDonBan.IdhoaDon = 1;
             //newChiTietHoaDonBan.IdmatHang = int.Parse(r.Cells["Id"].Value.ToString());
-            _matHangService.hoantra(int.Parse(r.Cells["Id"].Value.ToString()));
-            _chiTietHoaDonBanService.Remove(int.Parse(r.Cells["IdchiTietHoaDonBan"].Value.ToString()));
+            _matHangService.hoantra(int.Parse(r.Cells[1].Value.ToString()));
+            _chiTietHoaDonBanService.Remove(int.Parse(r.Cells[0].Value.ToString()));
             loaddichvu();
             showdata();
         }
         private DataGridViewRow r;
         private DataGridViewColumn c;
-        private void dgv_MatHang_Click(object sender, EventArgs e)
-        {
-            //textBox1.Text = dgv_MatHang.CurrentCell.Value.ToString();
-        }
-
-
 
         private void btn_thoat_Click(object sender, EventArgs e)
         {
             Frm_Main.load();
             this.Close();
 
-        }
-
-        private void dgv_MatHang_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if(e.RowIndex==-1) return;
-            r = dgv_MatHang.Rows[e.RowIndex];
-            if (e.ColumnIndex ==4)
-            {
-                adddichvu(r);
-            }
-        }
-
-        private void dgv_chitietdichvu_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex == -1) return;
-            r = dgv_chitietdichvu.Rows[e.RowIndex];
-            if (e.ColumnIndex ==5)
-            {
-                removedichvu(r);
-            }
         }
 
         private void txt_search_KeyUp(object sender, KeyEventArgs e)
@@ -236,14 +222,13 @@ namespace _3_GUI_PresentationLayer
 
         int thoigiansudung()
         {
-            int day = DateTime.Now.Day - _hoaDonBanHang.ThoiGianBatDau.Value.Day;
-            if (false)
-            {
-                
-            }
-            int x;
-            x = DateTime.Now.Hour - _hoaDonBanHang.ThoiGianBatDau.Value.Hour;
-            if (DateTime.Now.Minute - _hoaDonBanHang.ThoiGianBatDau.Value.Minute>=15)
+            DateTime fromnow = DateTime.Now;
+            DateTime fromdata = _hoaDonBanHang.ThoiGianBatDau.Value;
+            TimeSpan t = fromnow - fromdata;
+            double time = t.TotalHours;
+            int x = Convert.ToInt32(time);
+            int mini = Convert.ToInt32(t.TotalMinutes);
+            if ((mini-x*60)>=15)
             {
                 x+=1;
             }
@@ -364,6 +349,38 @@ namespace _3_GUI_PresentationLayer
             _dataMatHangs.Clear();
             _dataMatHangs = _lstMatHangs;
             showdata();
+        }
+
+        private void dgv_chitietdichvu_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex == -1 || e.RowIndex == (from a in _chiTietHoaDonBanService.sendlstChiTietHoaDonBan().Where(x => x.IdhoaDon == _hoaDonBanHang.IdhoaDon)
+                join b in _matHangService.GetlstMatHangs() on a.IdmatHang equals b.Id
+                select new
+                {
+                    a.IdchiTietHoaDonBan,
+                    b.Id,
+                    b.TenMatHang,
+                    a.DonGia,
+                    a.SoLuong
+                }).ToList().Count) return;
+            r = dgv_chitietdichvu.Rows[e.RowIndex];
+            if (dgv_chitietdichvu.Rows[e.RowIndex].Cells[e.ColumnIndex].Selected &&
+                dgv_chitietdichvu.Columns[e.ColumnIndex].Name == "cl_btn_xoa")
+            {
+                removedichvu(r);
+            }
+        }
+
+        private void dgv_MatHang_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex == -1 || e.RowIndex == _dataMatHangs.Count) return;
+            r = dgv_MatHang.Rows[e.RowIndex];
+            if (dgv_MatHang.Rows[e.RowIndex].Cells[e.ColumnIndex].Selected &&
+                dgv_MatHang.Columns[e.ColumnIndex].Name == "cl_btn_them")
+            {
+                adddichvu(r);
+            }
+
         }
     }
 }

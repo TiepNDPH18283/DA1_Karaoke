@@ -108,6 +108,10 @@ namespace _3_GUI
 
         private void button1_Click(object sender, EventArgs e)
         {
+            loadHoadonnhap();
+        }
+        public static void loadHoadonnhap()
+        {
             loadform.Controls.Clear();
             frm_HoaDonNhap frmHoaDonNhap = new frm_HoaDonNhap();
             frmHoaDonNhap.TopLevel = false;
@@ -115,6 +119,17 @@ namespace _3_GUI
             frmHoaDonNhap.FormBorderStyle = FormBorderStyle.None;
             frmHoaDonNhap.Dock = DockStyle.Fill;
             frmHoaDonNhap.Show();
+        }
+
+        public static void loadNhacungcap()
+        {
+            loadform.Controls.Clear();
+            frm_NhaCungCap frmNhaCungCap = new frm_NhaCungCap();
+            frmNhaCungCap.TopLevel = false;
+            loadform.Controls.Add(frmNhaCungCap);
+            frmNhaCungCap.FormBorderStyle = FormBorderStyle.None;
+            frmNhaCungCap.Dock = DockStyle.Fill;
+            frmNhaCungCap.Show();
         }
     }
 }

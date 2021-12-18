@@ -38,6 +38,8 @@ namespace _3_GUI_PresentationLayer
             this.label9 = new System.Windows.Forms.Label();
             this.dgv_MatHang = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
             this.txt_tongtien = new System.Windows.Forms.Label();
             this.lb_tienphong = new System.Windows.Forms.Label();
             this.txt_tiendv = new System.Windows.Forms.Label();
@@ -66,8 +68,6 @@ namespace _3_GUI_PresentationLayer
             this.txt_search = new System.Windows.Forms.TextBox();
             this.btn_giam = new System.Windows.Forms.Button();
             this.btn_tang = new System.Windows.Forms.Button();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_chitietdichvu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_MatHang)).BeginInit();
             this.panel1.SuspendLayout();
@@ -93,7 +93,7 @@ namespace _3_GUI_PresentationLayer
             this.dgv_chitietdichvu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dgv_chitietdichvu.Size = new System.Drawing.Size(900, 340);
             this.dgv_chitietdichvu.TabIndex = 0;
-            this.dgv_chitietdichvu.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_chitietdichvu_CellClick);
+            this.dgv_chitietdichvu.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_chitietdichvu_CellContentClick);
             // 
             // btn_thanhToanHoaDon
             // 
@@ -183,7 +183,7 @@ namespace _3_GUI_PresentationLayer
             this.dgv_MatHang.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dgv_MatHang.Size = new System.Drawing.Size(900, 340);
             this.dgv_MatHang.TabIndex = 11;
-            this.dgv_MatHang.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_MatHang_CellClick);
+            this.dgv_MatHang.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_MatHang_CellContentClick);
             // 
             // panel1
             // 
@@ -224,6 +224,24 @@ namespace _3_GUI_PresentationLayer
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(400, 750);
             this.panel1.TabIndex = 12;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(10, 450);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(387, 20);
+            this.label19.TabIndex = 44;
+            this.label19.Text = "---------------------------------------------------------------";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(10, 200);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(387, 20);
+            this.label18.TabIndex = 44;
+            this.label18.Text = "---------------------------------------------------------------";
             // 
             // txt_tongtien
             // 
@@ -512,24 +530,6 @@ namespace _3_GUI_PresentationLayer
             this.btn_tang.TabIndex = 35;
             this.btn_tang.UseVisualStyleBackColor = true;
             this.btn_tang.Click += new System.EventHandler(this.btn_tang_Click);
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(10, 200);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(387, 20);
-            this.label18.TabIndex = 44;
-            this.label18.Text = "---------------------------------------------------------------";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(10, 450);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(387, 20);
-            this.label19.TabIndex = 44;
-            this.label19.Text = "---------------------------------------------------------------";
             // 
             // Frm_ThanhToan
             // 

@@ -36,6 +36,7 @@ namespace _3_GUI
             this.dgr_NhanVien = new System.Windows.Forms.DataGridView();
             this.panel_dgr_NhanVien = new System.Windows.Forms.Panel();
             this.rbtn_BoiBan = new System.Windows.Forms.RadioButton();
+            this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.txt_SearchNhanVien = new System.Windows.Forms.TextBox();
             this.rbtn_LocNhanvien = new System.Windows.Forms.RadioButton();
@@ -102,8 +103,8 @@ namespace _3_GUI
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgr_NhanVien.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgr_NhanVien.Location = new System.Drawing.Point(0, 45);
@@ -128,6 +129,7 @@ namespace _3_GUI
             // 
             this.panel_dgr_NhanVien.BackColor = System.Drawing.SystemColors.Menu;
             this.panel_dgr_NhanVien.Controls.Add(this.rbtn_BoiBan);
+            this.panel_dgr_NhanVien.Controls.Add(this.label11);
             this.panel_dgr_NhanVien.Controls.Add(this.label10);
             this.panel_dgr_NhanVien.Controls.Add(this.txt_SearchNhanVien);
             this.panel_dgr_NhanVien.Controls.Add(this.rbtn_LocNhanvien);
@@ -146,14 +148,25 @@ namespace _3_GUI
             this.rbtn_BoiBan.AutoSize = true;
             this.rbtn_BoiBan.BackColor = System.Drawing.Color.Transparent;
             this.rbtn_BoiBan.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.rbtn_BoiBan.Location = new System.Drawing.Point(1028, 5);
+            this.rbtn_BoiBan.Location = new System.Drawing.Point(1140, 7);
             this.rbtn_BoiBan.Name = "rbtn_BoiBan";
-            this.rbtn_BoiBan.Size = new System.Drawing.Size(102, 32);
+            this.rbtn_BoiBan.Size = new System.Drawing.Size(167, 32);
             this.rbtn_BoiBan.TabIndex = 4;
             this.rbtn_BoiBan.TabStop = true;
-            this.rbtn_BoiBan.Text = "Bồi bàn";
+            this.rbtn_BoiBan.Text = "Nhân viên kho";
             this.rbtn_BoiBan.UseVisualStyleBackColor = false;
             this.rbtn_BoiBan.CheckedChanged += new System.EventHandler(this.rbtn_BoiBan_CheckedChanged);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.Transparent;
+            this.label11.Font = new System.Drawing.Font("Broadway", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label11.Location = new System.Drawing.Point(723, 7);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(83, 32);
+            this.label11.TabIndex = 2;
+            this.label11.Text = "Lọc :";
             // 
             // label10
             // 
@@ -182,7 +195,7 @@ namespace _3_GUI
             this.rbtn_LocNhanvien.AutoSize = true;
             this.rbtn_LocNhanvien.BackColor = System.Drawing.Color.Transparent;
             this.rbtn_LocNhanvien.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.rbtn_LocNhanvien.Location = new System.Drawing.Point(900, 5);
+            this.rbtn_LocNhanvien.Location = new System.Drawing.Point(1012, 7);
             this.rbtn_LocNhanvien.Name = "rbtn_LocNhanvien";
             this.rbtn_LocNhanvien.Size = new System.Drawing.Size(126, 32);
             this.rbtn_LocNhanvien.TabIndex = 3;
@@ -196,7 +209,7 @@ namespace _3_GUI
             this.rbtn_LocChucVu.AutoSize = true;
             this.rbtn_LocChucVu.BackColor = System.Drawing.Color.Transparent;
             this.rbtn_LocChucVu.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.rbtn_LocChucVu.Location = new System.Drawing.Point(800, 5);
+            this.rbtn_LocChucVu.Location = new System.Drawing.Point(912, 7);
             this.rbtn_LocChucVu.Name = "rbtn_LocChucVu";
             this.rbtn_LocChucVu.Size = new System.Drawing.Size(93, 32);
             this.rbtn_LocChucVu.TabIndex = 3;
@@ -210,7 +223,7 @@ namespace _3_GUI
             this.rbtn_LocNone.AutoSize = true;
             this.rbtn_LocNone.BackColor = System.Drawing.Color.Transparent;
             this.rbtn_LocNone.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.rbtn_LocNone.Location = new System.Drawing.Point(700, 5);
+            this.rbtn_LocNone.Location = new System.Drawing.Point(812, 7);
             this.rbtn_LocNone.Name = "rbtn_LocNone";
             this.rbtn_LocNone.Size = new System.Drawing.Size(86, 32);
             this.rbtn_LocNone.TabIndex = 3;
@@ -422,7 +435,7 @@ namespace _3_GUI
             this.cbox_ChucVu.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cbox_ChucVu.ForeColor = System.Drawing.Color.Black;
             this.cbox_ChucVu.FormattingEnabled = true;
-            this.cbox_ChucVu.Location = new System.Drawing.Point(797, 93);
+            this.cbox_ChucVu.Location = new System.Drawing.Point(797, 90);
             this.cbox_ChucVu.Name = "cbox_ChucVu";
             this.cbox_ChucVu.Size = new System.Drawing.Size(419, 36);
             this.cbox_ChucVu.TabIndex = 5;
@@ -663,5 +676,6 @@ namespace _3_GUI
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btn_Them;
+        private System.Windows.Forms.Label label11;
     }
 }

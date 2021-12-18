@@ -32,6 +32,7 @@ namespace _3_GUI
             this.pl_load = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btn_dshoadon = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.btn_sanpham = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
@@ -50,12 +51,13 @@ namespace _3_GUI
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.HighlightText;
             this.panel2.Controls.Add(this.btn_dshoadon);
+            this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.button4);
             this.panel2.Controls.Add(this.btn_sanpham);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1310, 90);
+            this.panel2.Size = new System.Drawing.Size(1310, 89);
             this.panel2.TabIndex = 1;
             // 
             // btn_dshoadon
@@ -64,13 +66,29 @@ namespace _3_GUI
             this.btn_dshoadon.FlatAppearance.BorderSize = 0;
             this.btn_dshoadon.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.HotTrack;
             this.btn_dshoadon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_dshoadon.Location = new System.Drawing.Point(500, 0);
+            this.btn_dshoadon.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_dshoadon.Location = new System.Drawing.Point(984, 0);
             this.btn_dshoadon.Name = "btn_dshoadon";
-            this.btn_dshoadon.Size = new System.Drawing.Size(250, 90);
+            this.btn_dshoadon.Size = new System.Drawing.Size(326, 90);
             this.btn_dshoadon.TabIndex = 0;
             this.btn_dshoadon.Text = "DS hóa đơn";
             this.btn_dshoadon.UseVisualStyleBackColor = false;
             this.btn_dshoadon.Click += new System.EventHandler(this.btn_dshoadon_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.HotTrack;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button1.Location = new System.Drawing.Point(656, 0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(326, 90);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Thiết bị";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button4
             // 
@@ -78,9 +96,10 @@ namespace _3_GUI
             this.button4.FlatAppearance.BorderSize = 0;
             this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.HotTrack;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Location = new System.Drawing.Point(250, 0);
+            this.button4.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button4.Location = new System.Drawing.Point(328, 0);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(250, 90);
+            this.button4.Size = new System.Drawing.Size(326, 90);
             this.button4.TabIndex = 0;
             this.button4.Text = "Doanh thu";
             this.button4.UseVisualStyleBackColor = false;
@@ -91,9 +110,10 @@ namespace _3_GUI
             this.btn_sanpham.FlatAppearance.BorderSize = 0;
             this.btn_sanpham.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.HotTrack;
             this.btn_sanpham.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_sanpham.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_sanpham.Location = new System.Drawing.Point(0, 0);
             this.btn_sanpham.Name = "btn_sanpham";
-            this.btn_sanpham.Size = new System.Drawing.Size(250, 90);
+            this.btn_sanpham.Size = new System.Drawing.Size(326, 90);
             this.btn_sanpham.TabIndex = 0;
             this.btn_sanpham.Text = "Sản phẩm";
             this.btn_sanpham.UseVisualStyleBackColor = false;
@@ -122,5 +142,6 @@ namespace _3_GUI
         private System.Windows.Forms.Button btn_dshoadon;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button btn_sanpham;
+        private System.Windows.Forms.Button button1;
     }
 }

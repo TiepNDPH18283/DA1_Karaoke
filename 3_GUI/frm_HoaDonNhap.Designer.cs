@@ -43,6 +43,7 @@ namespace _3_GUI
             this.dtp_NgayTao = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.gbx_NhaCungCap = new System.Windows.Forms.GroupBox();
+            this.btn_suattncc = new System.Windows.Forms.Button();
             this.btn_AddNhaCungCap = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -231,6 +232,7 @@ namespace _3_GUI
             // 
             // gbx_NhaCungCap
             // 
+            this.gbx_NhaCungCap.Controls.Add(this.btn_suattncc);
             this.gbx_NhaCungCap.Controls.Add(this.btn_AddNhaCungCap);
             this.gbx_NhaCungCap.Controls.Add(this.label7);
             this.gbx_NhaCungCap.Controls.Add(this.label5);
@@ -246,6 +248,20 @@ namespace _3_GUI
             this.gbx_NhaCungCap.TabIndex = 10;
             this.gbx_NhaCungCap.TabStop = false;
             this.gbx_NhaCungCap.Text = "Thông tin nhà cung cấp";
+            // 
+            // btn_suattncc
+            // 
+            this.btn_suattncc.BackColor = System.Drawing.SystemColors.Desktop;
+            this.btn_suattncc.FlatAppearance.BorderSize = 0;
+            this.btn_suattncc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_suattncc.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_suattncc.Location = new System.Drawing.Point(17, 190);
+            this.btn_suattncc.Name = "btn_suattncc";
+            this.btn_suattncc.Size = new System.Drawing.Size(100, 35);
+            this.btn_suattncc.TabIndex = 11;
+            this.btn_suattncc.Text = "Sửa";
+            this.btn_suattncc.UseVisualStyleBackColor = false;
+            this.btn_suattncc.Click += new System.EventHandler(this.btn_suattncc_Click);
             // 
             // btn_AddNhaCungCap
             // 
@@ -481,5 +497,6 @@ namespace _3_GUI
         private System.Windows.Forms.DateTimePicker dtp_NhapKho;
         private System.Windows.Forms.GroupBox gbx_HangCanCapNhat;
         private System.Windows.Forms.DataGridView dgrid_HangCanCapNhat;
+        private System.Windows.Forms.Button btn_suattncc;
     }
 }

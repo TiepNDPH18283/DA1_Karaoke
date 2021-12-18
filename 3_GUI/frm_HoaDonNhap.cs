@@ -339,5 +339,10 @@ namespace _3_GUI
         {
             FillDataHangCanNhap(Convert.ToDateTime(dtp_NhapKho.Text));
         }
+
+        private void btn_suattncc_Click(object sender, EventArgs e)
+        {
+            Frm_Main.loadNhacungcap();
+        }
     }
 }

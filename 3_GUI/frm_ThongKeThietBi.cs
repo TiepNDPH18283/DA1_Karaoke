@@ -31,11 +31,12 @@ namespace _3_GUI
                  join b in _LoaiThietBi_Service.GetlstLoaiThietBis() on a.IdmaLoaiTb equals b.MaLoaiTb
                  select new
                  {
-                     a.MaTb,
                      a.TenTb,
                      b.TenLoai,
                      b.XuatXu,
-                     a.SoLuong
+                     a.SoLuong,
+                     a.DonGia,
+                     Tongtien = a.SoLuong * a.DonGia
                  }).ToList();
             dataGridView1.DataSource = data;
         }
@@ -52,6 +53,7 @@ namespace _3_GUI
             if (comboBox1.Text == "Tất cả")
             {
                 LoadData();
+                LoadText();
             }
             else
             {
@@ -61,14 +63,26 @@ namespace _3_GUI
                             && a.TenTb.Equals(comboBox1.Text)
                             select new
                             {
-                                a.MaTb,
                                 a.TenTb,
                                 b.TenLoai,
                                 b.XuatXu,
-                                a.SoLuong
+                                a.SoLuong,
+                                a.DonGia,
+                                Tongtien = a.SoLuong * a.DonGia
                             }).ToList();
                 dataGridView1.DataSource = data;
+                LoadText();
             }
+        }
+        private void LoadText()
+        {
+            dataGridView1.Columns["TenTb"].HeaderText = "Tên thiết bị";
+            dataGridView1.Columns["TenLoai"].HeaderText = "Tên loại";
+            dataGridView1.Columns["Dongia"].HeaderText = "Đơn giá";
+            dataGridView1.Columns["SoLuong"].HeaderText = "Số lượng";
+            dataGridView1.Columns["Tongtien"].HeaderText = "Tổng tiền";
+            dataGridView1.Columns["XuatXu"].HeaderText = "Xuất xứ";
+            dataGridView1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
         }
     }
 }

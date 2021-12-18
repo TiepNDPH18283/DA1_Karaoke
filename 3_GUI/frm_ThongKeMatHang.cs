@@ -28,28 +28,6 @@ namespace _3_GUI
         }
         private IBUS_ChiTietHoaDonBan_Service _ChiTietHoaDonBan_Service;
         private IBUS_MatHang_Service _MatHang_Service;
-        private void LoadData()
-        {
-            try
-            {
-                var data =
-                (from a in _MatHang_Service.GetlstMatHangs()
-                 select new
-                 {
-                     TenMatHang = a.TenMatHang,
-                     DonGia = a.DonGia,
-                     SoLuong = a.SoLuong,
-                     Ngay = a.NgayTao,
-                     Tong = a.DonGia * a.SoLuong
-
-                 }).ToList();
-                dataGridView1.DataSource = data;
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-        }
         private void btn_thongke_Click(object sender, EventArgs e)
         {
             DateTime tungay, toingay;
@@ -66,8 +44,29 @@ namespace _3_GUI
             try
             {
                 if (comboBox1.Text == "Tất cả")
-                {
-                    LoadData();
+                {                   
+                    {
+                        try
+                        {
+                            var data =
+                            (from a in _MatHang_Service.GetlstMatHangs().Where(x => x.NgayTao >= tungay && x.NgayCapNhap <= toingay)
+                             select new
+                             {
+                                 TenMatHang = a.TenMatHang,
+                                 DonGia = a.DonGia,
+                                 SoLuong = a.SoLuong,
+                                 Ngay = a.NgayTao,
+                                 Tongtien = a.DonGia * a.SoLuong
+
+                             }).ToList();
+                            dataGridView1.DataSource = data;
+                            LoadText();
+                        }
+                        catch (Exception)
+                        {
+                            throw;
+                        }
+                    }
                 }
                 else
                 {
@@ -80,9 +79,10 @@ namespace _3_GUI
                                     DonGia = a.DonGia,
                                     SoLuong = a.SoLuong,
                                     Ngay = a.NgayTao,
-                                    Tong = a.DonGia * a.SoLuong
+                                    Tongtien = a.DonGia * a.SoLuong
                                 }).ToList();
                     dataGridView1.DataSource = data;
+                    LoadText();
                 }
             }
             catch (Exception)
@@ -94,7 +94,7 @@ namespace _3_GUI
         }
         private void LoadMBT()
         {
-            mtb_tungay.Text = DateTime.Now.ToString("dd/MM/yyyy");
+            mtb_tungay.Text = DateTime.Now.ToString("01/01/2000");
             mtb_toingay.Text = DateTime.Now.ToString("dd/MM/yyyy");
         }
         private void LoadCBB()
@@ -104,6 +104,15 @@ namespace _3_GUI
             {
                 comboBox1.Items.Add(x.TenMatHang);
             }
+        }
+        private void LoadText()
+        {
+            dataGridView1.Columns["TenMatHang"].HeaderText = "Tên mặt hàng";
+            dataGridView1.Columns["Dongia"].HeaderText = "Đơn giá";
+            dataGridView1.Columns["SoLuong"].HeaderText = "Số lượng";
+            dataGridView1.Columns["Ngay"].HeaderText = "Ngày nhập";
+            dataGridView1.Columns["Tongtien"].HeaderText = "Tổng tiền";
+            dataGridView1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
         }
     }
 }
