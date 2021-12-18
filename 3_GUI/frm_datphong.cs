@@ -36,7 +36,7 @@ namespace _3_GUI
         //string _giodonphong;
         List<Phong> _lstPhong = new List<Phong>();
         private System.Windows.Forms.Timer aTimer;
-        private int counter = 60;
+        private int counter = 600;
         public frm_datphong()
         {
             InitializeComponent();
@@ -113,7 +113,7 @@ namespace _3_GUI
                     {
                         //string thoiGian = counter.ToString();
                         DateTime thoiGianbg = DateTime.Now;
-                        lb.Text = tenPhong + "\n" + "Tgian bắt đầu dọn:" + thoiGianbg + "\n" + "Thời gian dọn:" + 60 /*counter*/ + "giây" /*+ "\n" + "Thời gian còn lại:"+_giodonphong*/;
+                        lb.Text = tenPhong + "\n" + "Tgian bắt đầu dọn:" + thoiGianbg + "\n" + "Thời gian dọn:" + 10 /*counter*/ + "phút" /*+ "\n" + "Thời gian còn lại:"+_giodonphong*/;
                     }
                     if (_lstPhong.FirstOrDefault(x => x.TrangThai == 2) == null)
                     {
@@ -123,12 +123,12 @@ namespace _3_GUI
                         var phongDon = _lstPhong.FirstOrDefault(x => x.TrangThai == 2);
                         if (lb.Name == phongDon.Id.ToString())
                         {
-                            lb.Text = phongDon.TenPhong + "\n" + "Tgian bắt đầu dọn:" + phongDon.NgayCapNhap + "\n" + "Thời gian dọn:" + 60 /*counter*/ + "giây" /*+ "\n" + "Thời gian còn lại:"+_giodonphong*/;
+                            lb.Text = phongDon.TenPhong + "\n" + "Tgian bắt đầu dọn:" + phongDon.NgayCapNhap + "\n" + "Thời gian dọn:" + 10 /*counter*/ + "phút" /*+ "\n" + "Thời gian còn lại:"+_giodonphong*/;
                             var tongthoigianDaDon = DateTime.Now - phongDon.NgayCapNhap.Value;
                             //MessageBox.Show(thoigianDon.ToString());
                             int soGiayDaDon = (tongthoigianDaDon.Hours * 60 * 60) + (tongthoigianDaDon.Minutes * 60 )+ tongthoigianDaDon.Seconds;
-                            if (60 < soGiayDaDon)
-                            {
+                            if (600 < soGiayDaDon)
+                            {          
                                 phongDon.TrangThai = 1;
                                 _iBUS_Phong_Service.Update(phongDon);
                                 MessageBox.Show("Phòng " + phongDon.TenPhong.ToString() + "đã dọn xong");
@@ -294,9 +294,9 @@ namespace _3_GUI
                 aTimer.Start();
 
                 // label1.Text = counter.ToString();
-                counter = 60;
+                counter = 600;
                 showRoom();
-                counter = 60;
+                counter = 600;
                 //_tgianChayNguoc = 10.ToString();
             }
             catch
@@ -418,7 +418,7 @@ namespace _3_GUI
                     {
                         //string thoiGian = counter.ToString();
                         DateTime thoiGianbg = DateTime.Now;
-                        lb.Text = tenPhong + "\n" + "Tgian bắt đầu dọn:" + thoiGianbg + "\n" + "Thời gian dọn:" + 600 /*counter*/ + "giây" /*+ "\n" + "Thời gian còn lại:"+_giodonphong*/;
+                        lb.Text = tenPhong + /*"\n" + "Tgian bắt đầu dọn:" + thoiGianbg + */"\n" + "Thời gian dọn:" + 10 /*counter*/ + "phút" /*+ "\n" + "Thời gian còn lại:"+_giodonphong*/;
                     }
                     foreach (var x in _lstPhong)
                     {
@@ -436,6 +436,14 @@ namespace _3_GUI
                         if (_lstPhong.FirstOrDefault(x => x.Id.ToString() == lb.Name).TrangThai == 1)
                         {
                             lb.Text = tenPhong;
+                        }
+                        if (_lstPhong.FirstOrDefault(x => x.Id.ToString() == lb.Name).TrangThai == 4)
+                        {
+                            lb.Text = tenPhong;
+                        }
+                        if (_lstPhong.FirstOrDefault(x => x.Id.ToString() == lb.Name).TrangThai == 2)
+                        {
+                            lb.Text = tenPhong +  "\n" + "Thời gian dọn:" + 10 /*counter*/ + "phút";
                         }
                     }
                 }
