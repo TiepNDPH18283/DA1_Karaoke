@@ -54,7 +54,7 @@ namespace _3_GUI
             foreach (var n in data)
             {
                 var nhanvien = _nhanVienService.GetlstNhanViens().SingleOrDefault(c => c.MaNv == n.IdmaNv);
-                dataGridView1.Rows.Add(n.IdhoaDon, n.TenPhong, n.Ho + " " + n.TenDem + " " + n.Ten, n.ThoiGianBatDau, nhanvien.Ho + " " + nhanvien.TenDem + "" + nhanvien.Ten);
+                dataGridView1.Rows.Add(n.IdhoaDon, n.TenPhong, n.Ho + " " + n.TenDem + " " + n.Ten, n.ThoiGianBatDau, nhanvien.Ho + " " + nhanvien.TenDem + " " + nhanvien.Ten);
             }
         }
 

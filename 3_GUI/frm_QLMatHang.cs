@@ -135,7 +135,7 @@ namespace _3_GUI_PresentationLayer
                 return;
             }
 
-            if (MessageBox.Show("Bạn muốn xóa "+r.Cells["TenMatHang"].Value.ToString()+" ?!","chú ý",MessageBoxButtons.YesNo,MessageBoxIcon.Question)==DialogResult.Yes)
+            if (MessageBox.Show("Bạn muốn xóa?!","chú ý",MessageBoxButtons.YesNo,MessageBoxIcon.Question)==DialogResult.Yes)
             {
                 if (_matHangService.RemoveMatHang(findMatHang()))
                 {

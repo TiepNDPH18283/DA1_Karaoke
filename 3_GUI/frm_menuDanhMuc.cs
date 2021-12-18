@@ -16,6 +16,35 @@ namespace _3_GUI
         public frm_menuDanhMuc()
         {
             InitializeComponent();
+            loadchucvu();
+        }
+        private void loadchucvu()
+        {
+            int chucvu = Frm_Main.staticnhanVien.IdchucVu.Value;
+            if (chucvu == 1)
+            {
+                button3.Enabled = true;
+                btn_thietbi.Enabled = true;
+                btn_Phong.Enabled = true;
+                btn_Nhanvien.Enabled = true;
+                btn_ctt.Enabled = true;
+            }
+            if (chucvu == 2)
+            {
+                button3.Enabled = true;
+                btn_thietbi.Enabled = true;
+                btn_Phong.Enabled = false;
+                btn_Nhanvien.Enabled = true;
+                btn_ctt.Enabled = true;
+            }
+            if (chucvu == 3)
+            {
+                button3.Enabled = true;
+                btn_thietbi.Enabled = false;
+                btn_Phong.Enabled = false;
+                btn_Nhanvien.Enabled = true;
+                btn_ctt.Enabled = false;
+            }
         }
         int x = 20, y = 9, a = 1;
         Random ran = new Random();

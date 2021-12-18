@@ -91,7 +91,7 @@ namespace _3_GUI
         }
         private void ClearForm()
         {
-            txt_MaNhanVien.Text = "";
+            
             txt_Ho.Text = "";
             txt_TenDem.Text = "";
             txt_Ten.Text = "";
@@ -112,7 +112,7 @@ namespace _3_GUI
             _tblNhanVien = _ibusNhanVien.GetlstNhanViens().FirstOrDefault(c => c.MaNv ==
                     dgr_NhanVien.Rows[rd].Cells[0].Value.ToString());
 
-            txt_MaNhanVien.Text = dgr_NhanVien.Rows[rd].Cells[0].Value.ToString();
+            
             txt_Ho.Text = _tblNhanVien.Ho.ToString();
             txt_TenDem.Text = _tblNhanVien.TenDem.ToString();
             txt_Ten.Text = _tblNhanVien.Ten.ToString();
@@ -162,7 +162,6 @@ namespace _3_GUI
             {
                 return;
             }
-            _tblNhanVien.MaNv = txt_MaNhanVien.Text;
             _tblNhanVien.Ho = txt_Ho.Text;
             _tblNhanVien.TenDem = txt_TenDem.Text;
             _tblNhanVien.Ten = txt_Ten.Text;
@@ -221,7 +220,7 @@ namespace _3_GUI
         public bool CheckLoiEverything()
         {
             DialogResult dn;
-            if (_icheck.CheckNull(txt_MaNhanVien.Text) || _icheck.CheckNull(txt_Ho.Text) || _icheck.CheckNull(txt_TenDem.Text) ||
+            if (_icheck.CheckNull(txt_Ho.Text) || _icheck.CheckNull(txt_TenDem.Text) ||
                 _icheck.CheckNull(txt_Ten.Text) || _icheck.CheckNull(cbox_ChucVu.Text) || _icheck.CheckNull(txt_DienThoai.Text) ||
                 _icheck.CheckNull(txt_CCCD.Text) || _icheck.CheckNull(txt_DiaChi.Text) || _icheck.CheckNull(txt_EmailLogin.Text))
             {

@@ -30,9 +30,26 @@ namespace _3_GUI
             _nhanVienService = new BUS_NhanVien_Service();
             staticnhanVien = new NhanVien();
             staticnhanVien = _nhanVienService.GetlstNhanViens().Where(c => c.Username == username).SingleOrDefault();
+            loadchucvu();
             load();
         }
 
+        private void loadchucvu()
+        {
+            int chucvu = staticnhanVien.IdchucVu.Value;
+            if (chucvu == 1)
+            {
+                button1.Enabled = true;
+            }
+            if (chucvu == 2)
+            {
+                button1.Enabled = false;
+            }
+            if (chucvu == 3)
+            {
+                button1.Enabled = true;
+            }
+        }
         public static NhanVien sendnhanvien()
         {
             return staticnhanVien;

@@ -15,9 +15,34 @@ namespace _3_GUI
         public frm_thongke()
         {
             InitializeComponent();
+            loadchucvu();
         }
-
-        private void btn_sanpham_Click(object sender, EventArgs e)
+        private void loadchucvu()
+        {
+            int chucvu = Frm_Main.staticnhanVien.IdchucVu.Value;
+            if (chucvu == 1)
+            {
+                button4.Enabled = true;
+                button1.Enabled = true;
+                btn_sanpham.Enabled = true;
+                btn_dshoadon.Enabled = true;
+            }
+            if (chucvu == 2)
+            {
+                button4.Enabled = false;
+                button1.Enabled = false;
+                btn_sanpham.Enabled = false;
+                btn_dshoadon.Enabled = true;
+            }
+            if (chucvu == 3)
+            {
+                button4.Enabled = true;
+                button1.Enabled = true;
+                btn_sanpham.Enabled = true;
+                btn_dshoadon.Enabled = false;
+            }
+        }
+            private void btn_sanpham_Click(object sender, EventArgs e)
         {
             pl_load.Controls.Clear();
             frm_ThongKeMatHang frmThongKeMatHang = new frm_ThongKeMatHang();
@@ -59,6 +84,17 @@ namespace _3_GUI
             frmThongKeThietBi.FormBorderStyle = FormBorderStyle.None;
             frmThongKeThietBi.Dock = DockStyle.Fill;
             frmThongKeThietBi.Show();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            pl_load.Controls.Clear();
+            frm_ThongKeThuChi frmThongKeThuChi = new frm_ThongKeThuChi();
+            frmThongKeThuChi.TopLevel = false;
+            pl_load.Controls.Add(frmThongKeThuChi);
+            frmThongKeThuChi.FormBorderStyle = FormBorderStyle.None;
+            frmThongKeThuChi.Dock = DockStyle.Fill;
+            frmThongKeThuChi.Show();
         }
     }
 }
