@@ -73,35 +73,41 @@ namespace _3_GUI
 
         private void btn_Them_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(txt_tentb.Text) ||!string.IsNullOrEmpty(txt_dongia.Text) ||
+            try
+            {
+                if (!string.IsNullOrEmpty(txt_tentb.Text) || !string.IsNullOrEmpty(txt_dongia.Text) ||
                 !string.IsNullOrEmpty(txt_soluong.Text) || !string.IsNullOrEmpty(txt_tinhtrang.Text) || !string.IsNullOrEmpty(cmb_mltb.Text))
-            {
-                ThietBi tb = new ThietBi();
-                tb.MaTb = "1";
-                if (_service.GetlstThietBis().Count != 0)
                 {
-                    tb.MaTb = _service.GetlstThietBis().Max(c => Convert.ToInt32(c.MaTb) + 1).ToString();
+                    ThietBi tb = new ThietBi();
+                    tb.MaTb = "1";
+                    if (_service.GetlstThietBis().Count != 0)
+                    {
+                        tb.MaTb = _service.GetlstThietBis().Max(c => Convert.ToInt32(c.MaTb) + 1).ToString();
+                    }
+                    tb.IdmaLoaiTb = _ltb[_ltb.FindIndex(x => x.TenLoai == cmb_mltb.Text)].MaLoaiTb;
+                    tb.TenTb = txt_tentb.Text;
+                    tb.DonGia = Convert.ToInt32(txt_dongia.Text);
+                    tb.SoLuong = Convert.ToInt32(txt_soluong.Text);
+                    tb.TinhTrang = Convert.ToInt32(txt_tinhtrang.Text);
+                    _service.AddThietBi(tb);
+                    MessageBox.Show("Thêm thành công", "Hoàn thành", MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+                    LoadData();
+                    txt_tentb.Text = null;
+                    txt_dongia.Text = null;
+                    txt_tinhtrang.Text = null;
+                    txt_soluong.Text = null;
                 }
-                tb.IdmaLoaiTb = _ltb[_ltb.FindIndex(x => x.TenLoai == cmb_mltb.Text)].MaLoaiTb;
-                tb.TenTb = txt_tentb.Text;
-                tb.DonGia = Convert.ToInt32(txt_dongia.Text);
-                tb.SoLuong = Convert.ToInt32(txt_soluong.Text);
-                tb.TinhTrang = Convert.ToInt32(txt_tinhtrang.Text);
-                _service.AddThietBi(tb);
-                MessageBox.Show("Thêm thành công", "Hoàn thành", MessageBoxButtons.OK,
-                MessageBoxIcon.Information);
-                LoadData();
-                txt_tentb.Text = null;
-                txt_dongia.Text = null;
-                txt_tinhtrang.Text = null;
-                txt_soluong.Text = null;
+                else
+                {
+                    MessageBox.Show("Nhập hộ cái dữ liệu vào", "Chú ý", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
-            else
+            catch (Exception)
             {
-                MessageBox.Show("Vui lòng nhập dữ liệu", "Chú ý", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Nhập hộ cái dữ liệu vào", "Chú ý", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
-
-
         }
         private ThietBi Gets()
         {
@@ -111,17 +117,58 @@ namespace _3_GUI
         }
         private void btn_Xoa_Click(object sender, EventArgs e)
         {
-            if (data == null)
+            try
+            {
+                if (data == null)
+                {
+                    MessageBox.Show("Bạn chưa chọn thiết bị", "Chú ý", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                if (MessageBox.Show("Are you sure about that " + data.Cells["TenTb"].Value.ToString() + " ?!", "Chú ý", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    if (_service.RemoveThietBi(Gets()))
+                    {
+                        MessageBox.Show("Xóa thành công", "Hoàn thành", MessageBoxButtons.OK);
+                        LoadData();
+                        data = null;
+                        txt_tentb.Text = null;
+                        txt_dongia.Text = null;
+                        txt_tinhtrang.Text = null;
+                        txt_soluong.Text = null;
+                    }
+                }
+            }
+            catch (Exception)
             {
                 MessageBox.Show("Bạn chưa chọn thiết bị", "Chú ý", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
-            }
+            }           
+        }
 
-            if (MessageBox.Show("Are you sure about that " + data.Cells["TenTb"].Value.ToString() + " ?!", "Chú ý", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+        private void btn_Sua_Click(object sender, EventArgs e)
+        {
+            try
             {
-                if (_service.RemoveThietBi(Gets()))
+                if (data == null)
                 {
-                    MessageBox.Show("Xóa thành công", "Hoàn thành", MessageBoxButtons.OK);
+                    MessageBox.Show("Vui lòng chọn dữ liệu", "chú ý", MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+                    return;
+                }
+
+                if (!string.IsNullOrEmpty(txt_tentb.Text) || !string.IsNullOrEmpty(txt_dongia.Text) ||
+                    !string.IsNullOrEmpty(txt_soluong.Text) || !string.IsNullOrEmpty(txt_tinhtrang.Text) || !string.IsNullOrEmpty(cmb_mltb.Text))
+                {
+                    var tb = Gets();
+                    tb.IdmaLoaiTb = _ltb.FirstOrDefault(x => x.TenLoai == cmb_mltb.Text).MaLoaiTb;
+                    tb.TenTb = txt_tentb.Text;
+                    tb.DonGia = Convert.ToInt32(txt_dongia.Text);
+                    tb.SoLuong = Convert.ToInt32(txt_soluong.Text);
+                    tb.TinhTrang = Convert.ToInt32(txt_tinhtrang.Text);
+                    _service.EditThietBi(tb);
+                    MessageBox.Show("Sửa thành công", "Hoàn thành", MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
                     LoadData();
                     data = null;
                     txt_tentb.Text = null;
@@ -129,42 +176,20 @@ namespace _3_GUI
                     txt_tinhtrang.Text = null;
                     txt_soluong.Text = null;
                 }
+                else
+                {
+                    MessageBox.Show("Vui lòng nhập dữ liệu", "chú ý", MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+                    return;
+                }
             }
-        }
-
-        private void btn_Sua_Click(object sender, EventArgs e)
-        {
-            if (data == null)
-            {
-                MessageBox.Show("Vui lòng chọn dữ liệu", "chú ý", MessageBoxButtons.OK,
-                MessageBoxIcon.Warning);
-                return;
-            }
-
-            if (!string.IsNullOrEmpty(txt_tentb.Text) || !string.IsNullOrEmpty(txt_dongia.Text) ||
-                !string.IsNullOrEmpty(txt_soluong.Text) || !string.IsNullOrEmpty(txt_tinhtrang.Text) || !string.IsNullOrEmpty(cmb_mltb.Text))
-            {
-                var tb = Gets();
-                tb.IdmaLoaiTb = _ltb.FirstOrDefault(x => x.TenLoai == cmb_mltb.Text).MaLoaiTb;
-                tb.TenTb = txt_tentb.Text;
-                tb.DonGia = Convert.ToInt32(txt_dongia.Text);
-                tb.SoLuong = Convert.ToInt32(txt_soluong.Text);
-                tb.TinhTrang = Convert.ToInt32(txt_tinhtrang.Text);
-                _service.EditThietBi(tb);
-                MessageBox.Show("Sửa thành công", "Hoàn thành", MessageBoxButtons.OK,
-                MessageBoxIcon.Information);
-                LoadData();
-                data = null;
-                txt_tentb.Text = null;
-                txt_dongia.Text = null;
-                txt_tinhtrang.Text = null;
-                txt_soluong.Text = null;
-            }
-            else
+            catch (Exception)
             {
                 MessageBox.Show("Vui lòng nhập dữ liệu", "chú ý", MessageBoxButtons.OK,
-                MessageBoxIcon.Warning);
+                    MessageBoxIcon.Warning);
+                return;
             }
+            
         }
 
         private void btn_Luu_Click(object sender, EventArgs e)

@@ -50,30 +50,39 @@ namespace _3_GUI
 
         private void btn_Them_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(txt_tenloai.Text) || !string.IsNullOrEmpty(txt_trangthai.Text) || !string.IsNullOrEmpty(txt_xuatxu.Text)) // nếu text box k null
+            try
             {
-                LoaiThietBi ltb = new LoaiThietBi();
-                ltb.MaLoaiTb = "1";
-                if (_service.GetlstLoaiThietBis().Count != 0)
+                if (!string.IsNullOrEmpty(txt_tenloai.Text) || !string.IsNullOrEmpty(txt_trangthai.Text) || !string.IsNullOrEmpty(txt_xuatxu.Text)) // nếu text box k null
                 {
-                    ltb.MaLoaiTb = _service.GetlstLoaiThietBis().Max(c => Convert.ToInt32(c.MaLoaiTb) + 1).ToString();
+                    LoaiThietBi ltb = new LoaiThietBi();
+                    ltb.MaLoaiTb = "1";
+                    if (_service.GetlstLoaiThietBis().Count != 0)
+                    {
+                        ltb.MaLoaiTb = _service.GetlstLoaiThietBis().Max(c => Convert.ToInt32(c.MaLoaiTb) + 1).ToString();
+                    }
+                    ltb.TenLoai = txt_tenloai.Text;
+                    ltb.XuatXu = txt_xuatxu.Text;
+                    ltb.IdtranngThai = txt_trangthai.Text;
+                    _service.AddLoaiThietBi(ltb);
+                    MessageBox.Show("Thêm thành công", "Hoàn thành", MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+                    showdata();
+                    txt_tenloai.Text = null;
+                    txt_trangthai.Text = null;
+                    txt_xuatxu.Text = null;
+
                 }
-                ltb.TenLoai = txt_tenloai.Text;
-                ltb.XuatXu = txt_xuatxu.Text;
-                ltb.IdtranngThai = txt_trangthai.Text;
-                _service.AddLoaiThietBi(ltb);
-                MessageBox.Show("Thêm thành công", "Hoàn thành", MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);
-                showdata();
-                txt_tenloai.Text = null;
-                txt_trangthai.Text = null;
-                txt_xuatxu.Text = null;
-                
+                else
+                {
+                    MessageBox.Show("Vui lòng nhập dữ liệu", "Chú ý", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
             }
-            else
+            catch (Exception)
             {
-                MessageBox.Show("Xem lại nhập", "Chú ý", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
+                MessageBox.Show("Vui lòng nhập dữ liệu", "Chú ý", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }           
         }
 
         private DataGridViewRow dt;
@@ -81,52 +90,71 @@ namespace _3_GUI
 
         private void btn_Xoa_Click(object sender, EventArgs e)
         {
-            if (dt == null)
+            try
+            {
+                if (dt == null)
+                {
+                    MessageBox.Show("Bạn chưa chọn loại cần xóa", "Chú ý!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                if (MessageBox.Show("Are you sure about that??", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    var ltb = _service.GetlstLoaiThietBis()
+                        .SingleOrDefault(x => x.MaLoaiTb == dt.Cells["MaLoaiTb"].Value.ToString());
+                    _service.RemoveLoaiThietBi(ltb);
+                    MessageBox.Show("Xóa thành công", "Hoàn thành", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    showdata();
+                    dt = null;
+                    txt_tenloai.Text = null;
+                    txt_trangthai.Text = null;
+                    txt_xuatxu.Text = null;
+                }
+            }
+            catch (Exception)
             {
                 MessageBox.Show("Bạn chưa chọn loại cần xóa", "Chú ý!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
+                throw;
             }
-            if (MessageBox.Show("Are you sure about that??", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                var ltb = _service.GetlstLoaiThietBis()
-                    .SingleOrDefault(x => x.MaLoaiTb == dt.Cells["MaLoaiTb"].Value.ToString());
-                _service.RemoveLoaiThietBi(ltb);
-                MessageBox.Show("Xóa thành công", "Hoàn thành", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                showdata();
-                dt = null;
-                txt_tenloai.Text = null;
-                txt_trangthai.Text = null;
-                txt_xuatxu.Text = null;
-            }
+            
         }
 
         private void btn_Sua_Click(object sender, EventArgs e)
         {
-            if (dt == null)
+            try
             {
-                MessageBox.Show("Bạn chưa chọn loại cần cập nhập", "Chú ý", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
+                if (dt == null)
+                {
+                    MessageBox.Show("Bạn chưa chọn loại cần cập nhập", "Chú ý", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
 
-            if (!string.IsNullOrEmpty(txt_tenloai.Text) || !string.IsNullOrEmpty(txt_xuatxu.Text) || !string.IsNullOrEmpty(txt_trangthai.Text))
-            {
-                var ltb = _service.GetlstLoaiThietBis()
-                    .SingleOrDefault(x => x.MaLoaiTb == dt.Cells["MaLoaiTb"].Value.ToString());
-                ltb.TenLoai = txt_tenloai.Text;
-                ltb.XuatXu = txt_xuatxu.Text;
-                ltb.IdtranngThai = txt_trangthai.Text;
-                _service.EditLoaiThietBi(ltb);
-                MessageBox.Show("Sửa thành công", "Hoàn thành", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                showdata();
-                dt = null;
-                txt_tenloai.Text = null;
-                txt_trangthai.Text = null;
-                txt_xuatxu.Text = null;
+                if (!string.IsNullOrEmpty(txt_tenloai.Text) || !string.IsNullOrEmpty(txt_xuatxu.Text) || !string.IsNullOrEmpty(txt_trangthai.Text))
+                {
+                    var ltb = _service.GetlstLoaiThietBis()
+                        .SingleOrDefault(x => x.MaLoaiTb == dt.Cells["MaLoaiTb"].Value.ToString());
+                    ltb.TenLoai = txt_tenloai.Text;
+                    ltb.XuatXu = txt_xuatxu.Text;
+                    ltb.IdtranngThai = txt_trangthai.Text;
+                    _service.EditLoaiThietBi(ltb);
+                    MessageBox.Show("Sửa thành công", "Hoàn thành", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    showdata();
+                    dt = null;
+                    txt_tenloai.Text = null;
+                    txt_trangthai.Text = null;
+                    txt_xuatxu.Text = null;
+                }
+                else
+                {
+                    MessageBox.Show("Xem lại nhập", "Chú ý", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
-            else
+            catch (Exception)
             {
                 MessageBox.Show("Xem lại nhập", "Chú ý", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
+            
         }
 
         private void btn_dong_Click(object sender, EventArgs e)
