@@ -133,6 +133,9 @@
   <data name="karaoke2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\karaoke2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="bút" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Image\bút.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="what-does-the-number-862-mean" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Image\what-does-the-number-862-mean.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -144,6 +147,9 @@
   </data>
   <data name="karaoke-family" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\karaoke-family.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon-hang-hoa" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Image\icon-hang-hoa.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="25608" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\25608.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -169,7 +175,7 @@
   <data name="mainimage" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Image\mainimage.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icon-hang-hoa" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Image\icon-hang-hoa.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="mainimage1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Image\mainimage.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

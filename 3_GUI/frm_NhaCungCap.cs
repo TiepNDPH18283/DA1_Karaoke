@@ -106,6 +106,11 @@ namespace _3_GUI
             FillDataToGrid();
         }
 
+        private void btn_back_Click(object sender, EventArgs e)
+        {
+            Frm_Main.loadHoadonnhap();
+        }
+
         private void dgrid_DataOfNCC_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if(e.RowIndex == _nhaCungCapService.GetListnNhaCungCapsFromDAL().Count || e.RowIndex == -1) return;
@@ -116,26 +121,6 @@ namespace _3_GUI
             txt_Email.Text = dgrid_DataOfNCC.Rows[e.RowIndex].Cells[4].Value.ToString();
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            try
-            {
-                x += a;
-                lbl_Timer.Location = new Point(x, y);
-                if (x >= 713)
-                {
-                    a = -1;
-                    lbl_Timer.ForeColor = Color.FromArgb(ran.Next(0, 255), ran.Next(0, 255), ran.Next(0, 255));
-                }
-                if (x <= 12)
-                {
-                    a = 1;
-                    lbl_Timer.ForeColor = Color.FromArgb(ran.Next(0, 255), ran.Next(0, 255), ran.Next(0, 255));
-                }
-            }
-            catch (Exception ex)
-            {
-            }
-        }
+        
     }
 }
