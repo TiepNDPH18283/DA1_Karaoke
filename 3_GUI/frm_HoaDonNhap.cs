@@ -129,7 +129,7 @@ namespace _3_GUI
                     if (donViTInh != null && matHang != null)
                         dgrid_ChiTietHoaDonNhap.Rows.Add(x.IdchiTietHoaDonNhap, x.IdhoaDon, x.IdmatHang,
                             matHang.TenMatHang, x.SoLuong,
-                            donViTInh.TenDvt, x.DonGiaNhap + " VNĐ");
+                            donViTInh.TenDvt, x.DonGiaNhap);
                 }
 
             var btnXoa = new DataGridViewButtonColumn();
@@ -156,7 +156,7 @@ namespace _3_GUI
             dgrid_HoaDonNhap.Columns[6].Visible = false;
             dgrid_HoaDonNhap.Columns[2].Visible = false;
             foreach (var x in _hoaDonNhapService.GetListHoaDonNhaps())
-                dgrid_HoaDonNhap.Rows.Add(x.Id, x.TienThanhToan + " VNĐ", x.IdnhaCc, x.NgayTao, x.NguoiTao, x.NgayCapNhap,
+                dgrid_HoaDonNhap.Rows.Add(x.Id, x.TienThanhToan, x.IdnhaCc, x.NgayTao, x.NguoiTao, x.NgayCapNhap,
                     x.NguoiCapNhap);
 
             var btnCapNhat = new DataGridViewButtonColumn();
@@ -177,7 +177,7 @@ namespace _3_GUI
             dgrid_MatHang.Columns[4].Name = "Đơn vị tính";
             dgrid_MatHang.Columns[0].Visible = false;
             foreach (var x in _reMatHangService.GetListMatHangs())
-                dgrid_MatHang.Rows.Add(x.Id, x.TenMatHang, x.DonGia + " VNĐ", x.SoLuong, _donViTinhService.GetlstDonViTinhs().FirstOrDefault(c => c.Id == x.IddonViTinh)?.TenDvt);
+                dgrid_MatHang.Rows.Add(x.Id, x.TenMatHang, x.DonGia, x.SoLuong, _donViTinhService.GetlstDonViTinhs().FirstOrDefault(c => c.Id == x.IddonViTinh)?.TenDvt);
 
             var btnThem = new DataGridViewButtonColumn();
             btnThem.Text = "Thêm";
