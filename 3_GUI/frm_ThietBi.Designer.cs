@@ -33,9 +33,7 @@ namespace _3_GUI
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.txt_matb = new System.Windows.Forms.TextBox();
             this.txt_tentb = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.btn_Them = new System.Windows.Forms.Button();
@@ -68,49 +66,26 @@ namespace _3_GUI
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // txt_matb
-            // 
-            this.txt_matb.BackColor = System.Drawing.SystemColors.Control;
-            this.txt_matb.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txt_matb.Location = new System.Drawing.Point(225, 54);
-            this.txt_matb.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.txt_matb.Multiline = true;
-            this.txt_matb.Name = "txt_matb";
-            this.txt_matb.Size = new System.Drawing.Size(415, 34);
-            this.txt_matb.TabIndex = 1;
-            // 
             // txt_tentb
             // 
             this.txt_tentb.BackColor = System.Drawing.SystemColors.Control;
             this.txt_tentb.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txt_tentb.Location = new System.Drawing.Point(225, 140);
+            this.txt_tentb.Location = new System.Drawing.Point(225, 57);
             this.txt_tentb.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.txt_tentb.Multiline = true;
             this.txt_tentb.Name = "txt_tentb";
             this.txt_tentb.Size = new System.Drawing.Size(415, 34);
             this.txt_tentb.TabIndex = 3;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(57, 57);
-            this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(136, 25);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Mã thiết bị :";
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(54, 143);
+            this.label2.Location = new System.Drawing.Point(65, 61);
             this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(139, 25);
+            this.label2.Size = new System.Drawing.Size(113, 22);
             this.label2.TabIndex = 5;
             this.label2.Text = "Tên thiết bị :";
             // 
@@ -119,12 +94,12 @@ namespace _3_GUI
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(17, 100);
+            this.label3.Location = new System.Drawing.Point(93, 109);
             this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(176, 25);
+            this.label3.Size = new System.Drawing.Size(82, 22);
             this.label3.TabIndex = 6;
-            this.label3.Text = "Mã loại thiết bị :";
+            this.label3.Text = "Tên loại:";
             // 
             // btn_Them
             // 
@@ -181,10 +156,10 @@ namespace _3_GUI
             this.cmb_mltb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_mltb.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cmb_mltb.FormattingEnabled = true;
-            this.cmb_mltb.Location = new System.Drawing.Point(225, 97);
+            this.cmb_mltb.Location = new System.Drawing.Point(225, 109);
             this.cmb_mltb.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.cmb_mltb.Name = "cmb_mltb";
-            this.cmb_mltb.Size = new System.Drawing.Size(317, 34);
+            this.cmb_mltb.Size = new System.Drawing.Size(317, 28);
             this.cmb_mltb.TabIndex = 10;
             // 
             // btn_Luu
@@ -208,7 +183,7 @@ namespace _3_GUI
             // 
             this.txt_dongia.BackColor = System.Drawing.SystemColors.Control;
             this.txt_dongia.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txt_dongia.Location = new System.Drawing.Point(225, 183);
+            this.txt_dongia.Location = new System.Drawing.Point(225, 162);
             this.txt_dongia.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.txt_dongia.Multiline = true;
             this.txt_dongia.Name = "txt_dongia";
@@ -220,10 +195,10 @@ namespace _3_GUI
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(89, 186);
+            this.label5.Location = new System.Drawing.Point(93, 165);
             this.label5.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(104, 25);
+            this.label5.Size = new System.Drawing.Size(85, 22);
             this.label5.TabIndex = 15;
             this.label5.Text = "Đơn giá :";
             // 
@@ -232,10 +207,10 @@ namespace _3_GUI
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(79, 229);
+            this.label6.Location = new System.Drawing.Point(85, 217);
             this.label6.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(114, 25);
+            this.label6.Size = new System.Drawing.Size(93, 22);
             this.label6.TabIndex = 17;
             this.label6.Text = "Số lượng :";
             // 
@@ -243,7 +218,7 @@ namespace _3_GUI
             // 
             this.txt_soluong.BackColor = System.Drawing.SystemColors.Control;
             this.txt_soluong.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txt_soluong.Location = new System.Drawing.Point(225, 226);
+            this.txt_soluong.Location = new System.Drawing.Point(225, 214);
             this.txt_soluong.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.txt_soluong.Multiline = true;
             this.txt_soluong.Name = "txt_soluong";
@@ -255,10 +230,10 @@ namespace _3_GUI
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(59, 272);
+            this.label7.Location = new System.Drawing.Point(71, 272);
             this.label7.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(134, 25);
+            this.label7.Size = new System.Drawing.Size(107, 22);
             this.label7.TabIndex = 19;
             this.label7.Text = "Tình trạng :";
             // 
@@ -309,9 +284,7 @@ namespace _3_GUI
             this.groupBox4.Controls.Add(this.pictureBox2);
             this.groupBox4.Controls.Add(this.btn_themloaithietbi);
             this.groupBox4.Controls.Add(this.cmb_mltb);
-            this.groupBox4.Controls.Add(this.txt_matb);
             this.groupBox4.Controls.Add(this.txt_tentb);
-            this.groupBox4.Controls.Add(this.label1);
             this.groupBox4.Controls.Add(this.label7);
             this.groupBox4.Controls.Add(this.label2);
             this.groupBox4.Controls.Add(this.txt_tinhtrang);
@@ -344,7 +317,7 @@ namespace _3_GUI
             this.btn_themloaithietbi.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btn_themloaithietbi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_themloaithietbi.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_themloaithietbi.Location = new System.Drawing.Point(550, 97);
+            this.btn_themloaithietbi.Location = new System.Drawing.Point(550, 109);
             this.btn_themloaithietbi.Name = "btn_themloaithietbi";
             this.btn_themloaithietbi.Size = new System.Drawing.Size(90, 34);
             this.btn_themloaithietbi.TabIndex = 20;
@@ -418,7 +391,7 @@ namespace _3_GUI
             // 
             // frm_ThietBi
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 31F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.ClientSize = new System.Drawing.Size(1310, 740);
@@ -444,9 +417,7 @@ namespace _3_GUI
         }
 
         #endregion
-        private System.Windows.Forms.TextBox txt_matb;
         private System.Windows.Forms.TextBox txt_tentb;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btn_Them;

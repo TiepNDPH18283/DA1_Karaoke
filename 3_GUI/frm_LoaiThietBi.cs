@@ -34,6 +34,11 @@ namespace _3_GUI
                             a.IdtranngThai
                         }).ToList();
             dgv_LoaiThietBi.DataSource = data;
+            dgv_LoaiThietBi.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgv_LoaiThietBi.Columns["TenLoai"].HeaderText = "Tên Loại";
+            dgv_LoaiThietBi.Columns["MaLoaiTb"].HeaderText = "Mã loại thiết bị";
+            dgv_LoaiThietBi.Columns["XuatXu"].HeaderText = "Xuất xứ";
+            dgv_LoaiThietBi.Columns["IdtranngThai"].HeaderText = "ID trạng thái";
         }
 
         private void btn_luu_Click(object sender, EventArgs e)
@@ -45,7 +50,7 @@ namespace _3_GUI
 
         private void btn_Them_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(txt_maltb.Text) || !string.IsNullOrEmpty(txt_tenloai.Text) || !string.IsNullOrEmpty(txt_trangthai.Text) || !string.IsNullOrEmpty(txt_xuatxu.Text)) // nếu text box k null
+            if (!string.IsNullOrEmpty(txt_tenloai.Text) || !string.IsNullOrEmpty(txt_trangthai.Text) || !string.IsNullOrEmpty(txt_xuatxu.Text)) // nếu text box k null
             {
                 LoaiThietBi ltb = new LoaiThietBi();
                 ltb.MaLoaiTb = "1";
@@ -60,10 +65,10 @@ namespace _3_GUI
                 MessageBox.Show("Thêm thành công", "Hoàn thành", MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
                 showdata();
-                txt_maltb.Text = null;
                 txt_tenloai.Text = null;
                 txt_trangthai.Text = null;
                 txt_xuatxu.Text = null;
+                
             }
             else
             {
@@ -89,7 +94,6 @@ namespace _3_GUI
                 MessageBox.Show("Xóa thành công", "Hoàn thành", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 showdata();
                 dt = null;
-                txt_maltb.Text = null;
                 txt_tenloai.Text = null;
                 txt_trangthai.Text = null;
                 txt_xuatxu.Text = null;
@@ -104,11 +108,10 @@ namespace _3_GUI
                 return;
             }
 
-            if (!string.IsNullOrEmpty(txt_maltb.Text) || !string.IsNullOrEmpty(txt_tenloai.Text) || !string.IsNullOrEmpty(txt_xuatxu.Text) || !string.IsNullOrEmpty(txt_trangthai.Text))
+            if (!string.IsNullOrEmpty(txt_tenloai.Text) || !string.IsNullOrEmpty(txt_xuatxu.Text) || !string.IsNullOrEmpty(txt_trangthai.Text))
             {
                 var ltb = _service.GetlstLoaiThietBis()
                     .SingleOrDefault(x => x.MaLoaiTb == dt.Cells["MaLoaiTb"].Value.ToString());
-                ltb.MaLoaiTb = txt_maltb.Text;
                 ltb.TenLoai = txt_tenloai.Text;
                 ltb.XuatXu = txt_xuatxu.Text;
                 ltb.IdtranngThai = txt_trangthai.Text;
@@ -116,7 +119,6 @@ namespace _3_GUI
                 MessageBox.Show("Sửa thành công", "Hoàn thành", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 showdata();
                 dt = null;
-                txt_maltb.Text = null;
                 txt_tenloai.Text = null;
                 txt_trangthai.Text = null;
                 txt_xuatxu.Text = null;
@@ -136,7 +138,6 @@ namespace _3_GUI
         {
             if (e.RowIndex == -1) return;
             dt = dgv_LoaiThietBi.Rows[e.RowIndex];
-            txt_maltb.Text = dt.Cells["MaLoaiTB"].Value.ToString();
             txt_tenloai.Text = dt.Cells["TenLoai"].Value.ToString();
             txt_xuatxu.Text = dt.Cells["XuatXu"].Value.ToString();
             txt_trangthai.Text = dt.Cells["IdtranngThai"].Value.ToString();

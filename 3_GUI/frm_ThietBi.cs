@@ -42,8 +42,8 @@ namespace _3_GUI
                  select new
                  {
                      a.MaTb,
-                     b.MaLoaiTb,
                      a.TenTb,
+                     b.TenLoai,
                      a.DonGia,
                      a.SoLuong,
                      a.TinhTrang,
@@ -51,8 +51,8 @@ namespace _3_GUI
                  }).ToList();
             dgv_QLThietBi.DataSource = data;
             dgv_QLThietBi.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgv_QLThietBi.Columns["TenLoai"].HeaderText = "Tên Loại";
             dgv_QLThietBi.Columns["MaTb"].HeaderText = "Mã thiết bị";
-            dgv_QLThietBi.Columns["MaLoaiTb"].HeaderText = "Loại thiết bị";
             dgv_QLThietBi.Columns["TenTb"].HeaderText = "Tên thiết bị";
             dgv_QLThietBi.Columns["DonGia"].HeaderText = "Đơn giá";
             dgv_QLThietBi.Columns["SoLuong"].HeaderText = "Số lượng";
@@ -65,7 +65,7 @@ namespace _3_GUI
             _ltb = _lTBservice.GetlstLoaiThietBis();
             foreach (var x in _lTBservice.GetlstLoaiThietBis())
             {
-                cmb_mltb.Items.Add(x.MaLoaiTb);
+                cmb_mltb.Items.Add(x.TenLoai);
             }
         }
         private DataGridViewRow data;
@@ -73,7 +73,7 @@ namespace _3_GUI
 
         private void btn_Them_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(txt_tentb.Text) || !string.IsNullOrEmpty(txt_matb.Text) || !string.IsNullOrEmpty(txt_dongia.Text) ||
+            if (!string.IsNullOrEmpty(txt_tentb.Text) ||!string.IsNullOrEmpty(txt_dongia.Text) ||
                 !string.IsNullOrEmpty(txt_soluong.Text) || !string.IsNullOrEmpty(txt_tinhtrang.Text) || !string.IsNullOrEmpty(cmb_mltb.Text))
             {
                 ThietBi tb = new ThietBi();
@@ -81,8 +81,8 @@ namespace _3_GUI
                 if (_service.GetlstThietBis().Count != 0)
                 {
                     tb.MaTb = _service.GetlstThietBis().Max(c => Convert.ToInt32(c.MaTb) + 1).ToString();
-                }         
-                tb.IdmaLoaiTb = _ltb[_ltb.FindIndex(x => x.MaLoaiTb == cmb_mltb.Text)].MaLoaiTb;
+                }
+                tb.IdmaLoaiTb = _ltb[_ltb.FindIndex(x => x.TenLoai == cmb_mltb.Text)].MaLoaiTb;
                 tb.TenTb = txt_tentb.Text;
                 tb.DonGia = Convert.ToInt32(txt_dongia.Text);
                 tb.SoLuong = Convert.ToInt32(txt_soluong.Text);
@@ -91,7 +91,6 @@ namespace _3_GUI
                 MessageBox.Show("Thêm thành công", "Hoàn thành", MessageBoxButtons.OK,
                 MessageBoxIcon.Information);
                 LoadData();
-                txt_matb.Text = null;
                 txt_tentb.Text = null;
                 txt_dongia.Text = null;
                 txt_tinhtrang.Text = null;
@@ -125,7 +124,6 @@ namespace _3_GUI
                     MessageBox.Show("Xóa thành công", "Hoàn thành", MessageBoxButtons.OK);
                     LoadData();
                     data = null;
-                    txt_matb.Text = null;
                     txt_tentb.Text = null;
                     txt_dongia.Text = null;
                     txt_tinhtrang.Text = null;
@@ -143,11 +141,11 @@ namespace _3_GUI
                 return;
             }
 
-            if (!string.IsNullOrEmpty(txt_tentb.Text) || !string.IsNullOrEmpty(txt_matb.Text) || !string.IsNullOrEmpty(txt_dongia.Text) ||
+            if (!string.IsNullOrEmpty(txt_tentb.Text) || !string.IsNullOrEmpty(txt_dongia.Text) ||
                 !string.IsNullOrEmpty(txt_soluong.Text) || !string.IsNullOrEmpty(txt_tinhtrang.Text) || !string.IsNullOrEmpty(cmb_mltb.Text))
             {
                 var tb = Gets();
-                tb.IdmaLoaiTb = _ltb[_ltb.FindIndex(x => x.MaLoaiTb == cmb_mltb.Text)].MaLoaiTb;
+                tb.IdmaLoaiTb = _ltb.FirstOrDefault(x => x.TenLoai == cmb_mltb.Text).MaLoaiTb;
                 tb.TenTb = txt_tentb.Text;
                 tb.DonGia = Convert.ToInt32(txt_dongia.Text);
                 tb.SoLuong = Convert.ToInt32(txt_soluong.Text);
@@ -157,7 +155,6 @@ namespace _3_GUI
                 MessageBoxIcon.Information);
                 LoadData();
                 data = null;
-                txt_matb.Text = null;
                 txt_tentb.Text = null;
                 txt_dongia.Text = null;
                 txt_tinhtrang.Text = null;
@@ -185,12 +182,11 @@ namespace _3_GUI
         {
             if (e.RowIndex == -1) return;
             data = dgv_QLThietBi.Rows[e.RowIndex];
-            txt_matb.Text = data.Cells["MaTb"].Value.ToString();
             txt_tentb.Text = data.Cells["TenTb"].Value.ToString();
             txt_dongia.Text = data.Cells["DonGia"].Value.ToString();
             txt_tinhtrang.Text = data.Cells["TinhTrang"].Value.ToString();
             txt_soluong.Text = data.Cells["SoLuong"].Value.ToString();
-            cmb_mltb.Text = data.Cells["MaLoaiTb"].Value.ToString();
+            cmb_mltb.Text = data.Cells["TenLoai"].Value.ToString();
         }
     }
 }

@@ -33,9 +33,7 @@ namespace _3_GUI
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgv_LoaiThietBi = new System.Windows.Forms.DataGridView();
-            this.txt_maltb = new System.Windows.Forms.TextBox();
             this.txt_xuatxu = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.btn_Them = new System.Windows.Forms.Button();
@@ -90,36 +88,14 @@ namespace _3_GUI
             this.dgv_LoaiThietBi.TabIndex = 0;
             this.dgv_LoaiThietBi.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_LoaiThietBi_CellClick);
             // 
-            // txt_maltb
-            // 
-            this.txt_maltb.Location = new System.Drawing.Point(30, 60);
-            this.txt_maltb.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.txt_maltb.Multiline = true;
-            this.txt_maltb.Name = "txt_maltb";
-            this.txt_maltb.Size = new System.Drawing.Size(250, 40);
-            this.txt_maltb.TabIndex = 1;
-            // 
             // txt_xuatxu
             // 
-            this.txt_xuatxu.Location = new System.Drawing.Point(30, 150);
+            this.txt_xuatxu.Location = new System.Drawing.Point(154, 161);
             this.txt_xuatxu.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.txt_xuatxu.Multiline = true;
             this.txt_xuatxu.Name = "txt_xuatxu";
             this.txt_xuatxu.Size = new System.Drawing.Size(250, 40);
             this.txt_xuatxu.TabIndex = 3;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.SystemColors.Menu;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label1.Location = new System.Drawing.Point(30, 25);
-            this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(187, 32);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Mã loại thiết bị";
             // 
             // label2
             // 
@@ -127,10 +103,10 @@ namespace _3_GUI
             this.label2.BackColor = System.Drawing.SystemColors.Menu;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label2.Location = new System.Drawing.Point(30, 115);
+            this.label2.Location = new System.Drawing.Point(154, 118);
             this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(103, 32);
+            this.label2.Size = new System.Drawing.Size(82, 25);
             this.label2.TabIndex = 5;
             this.label2.Text = "Xuất xứ";
             // 
@@ -142,7 +118,7 @@ namespace _3_GUI
             this.label3.Location = new System.Drawing.Point(319, 21);
             this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(0, 20);
+            this.label3.Size = new System.Drawing.Size(0, 15);
             this.label3.TabIndex = 6;
             // 
             // btn_Them
@@ -221,7 +197,7 @@ namespace _3_GUI
             // 
             // txt_tenloai
             // 
-            this.txt_tenloai.Location = new System.Drawing.Point(370, 60);
+            this.txt_tenloai.Location = new System.Drawing.Point(84, 50);
             this.txt_tenloai.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.txt_tenloai.Multiline = true;
             this.txt_tenloai.Name = "txt_tenloai";
@@ -230,7 +206,7 @@ namespace _3_GUI
             // 
             // txt_trangthai
             // 
-            this.txt_trangthai.Location = new System.Drawing.Point(370, 150);
+            this.txt_trangthai.Location = new System.Drawing.Point(397, 50);
             this.txt_trangthai.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.txt_trangthai.Multiline = true;
             this.txt_trangthai.Name = "txt_trangthai";
@@ -243,10 +219,10 @@ namespace _3_GUI
             this.label4.BackColor = System.Drawing.SystemColors.Menu;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label4.Location = new System.Drawing.Point(370, 115);
+            this.label4.Location = new System.Drawing.Point(397, 21);
             this.label4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(162, 32);
+            this.label4.Size = new System.Drawing.Size(127, 25);
             this.label4.TabIndex = 15;
             this.label4.Text = "ID Trạng thái";
             // 
@@ -256,10 +232,10 @@ namespace _3_GUI
             this.label5.BackColor = System.Drawing.SystemColors.Menu;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label5.Location = new System.Drawing.Point(370, 25);
+            this.label5.Location = new System.Drawing.Point(84, 21);
             this.label5.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(103, 32);
+            this.label5.Size = new System.Drawing.Size(80, 25);
             this.label5.TabIndex = 16;
             this.label5.Text = "Tên loại";
             // 
@@ -268,13 +244,11 @@ namespace _3_GUI
             this.panel1.BackColor = System.Drawing.SystemColors.Menu;
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.btn_Xoa);
-            this.panel1.Controls.Add(this.txt_maltb);
             this.panel1.Controls.Add(this.btn_Sua);
             this.panel1.Controls.Add(this.txt_xuatxu);
             this.panel1.Controls.Add(this.btn_luu);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.btn_Them);
-            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.txt_trangthai);
             this.panel1.Controls.Add(this.txt_tenloai);
@@ -286,7 +260,7 @@ namespace _3_GUI
             // 
             // frm_LoaiThietBi
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 31F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.ClientSize = new System.Drawing.Size(1310, 740);
@@ -308,9 +282,7 @@ namespace _3_GUI
         #endregion
 
         private System.Windows.Forms.DataGridView dgv_LoaiThietBi;
-        private System.Windows.Forms.TextBox txt_maltb;
         private System.Windows.Forms.TextBox txt_xuatxu;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btn_Them;
