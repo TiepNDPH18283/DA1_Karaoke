@@ -32,6 +32,7 @@ namespace _3_GUI
             LoadCbxChucVu();
             loadquyen();
             LoadDgrNhanVien();
+            checkBox1.Checked = true;
         }
         void loadquyen()
         {
@@ -64,7 +65,7 @@ namespace _3_GUI
             dgr_NhanVien.Rows.Clear();
             foreach (var x in _ibusNhanVien.GetlstNhanViens())
             {
-                var chucvu = _ibusNhanVien.GetlstChucVus().FirstOrDefault(c => c.Id == x.IdchucVu);
+                var chucvu = _ibusNhanVien.GetlstChucVus().FirstOrDefault(c => c.Id == x.IdchucVu||c.IdtrangThai=="1");
                 dgr_NhanVien.Rows.Add(x.MaNv, x.Ho + " " + x.TenDem + " " + x.Ten, x.Username ,x.GioiTinh == 1 ? "Nam" : "Nữ", chucvu.TenChucVu, x.DienThoai,
                                         x.Cmnd, x.DiaChi);
             }
@@ -130,7 +131,11 @@ namespace _3_GUI
                 return;
             }
             NhanVien nva = new NhanVien();
-            nva.MaNv = txt_MaNhanVien.Text;
+            nva.MaNv = "1";
+            if (_ibusNhanVien.GetlstNhanViens().Count!=0)
+            {
+                nva.MaNv = _ibusNhanVien.GetlstNhanViens().Max(c => Convert.ToInt32(c.MaNv)+1).ToString();
+            }
             nva.Ho = txt_Ho.Text;
             nva.TenDem = txt_TenDem.Text;
             nva.Ten = txt_Ten.Text;
@@ -141,7 +146,7 @@ namespace _3_GUI
             nva.DienThoai = txt_DienThoai.Text;
             nva.Cmnd = txt_CCCD.Text;
             nva.DiaChi = txt_DiaChi.Text;
-
+            nva.IdtranngThai = checkBox1.Checked ? 1 : 0;
             if (MessageBox.Show("Bạn có muốn 🤔 Thêm Nhân viên 🤔 không ?", "Xác nhận",
                     MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
@@ -168,7 +173,7 @@ namespace _3_GUI
             _tblNhanVien.DienThoai = txt_DienThoai.Text;
             _tblNhanVien.Cmnd = txt_CCCD.Text;
             _tblNhanVien.DiaChi = txt_DiaChi.Text;
-
+            _tblNhanVien.IdtranngThai = checkBox1.Checked?1:0;
             if (MessageBox.Show("Bạn có muốn 🤔 Sửa Nhân viên 🤔 không ?", "Xác nhận",
                     MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
@@ -183,7 +188,8 @@ namespace _3_GUI
             if (MessageBox.Show("Bạn có muốn 🤔 Xóa Nhân viên 🤔 không ?", "Xác nhận",
                     MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                _ibusNhanVien.Remove(_tblNhanVien);
+                _tblNhanVien.IdtranngThai = 0;
+                _ibusNhanVien.Update(_tblNhanVien);
                 MessageBox.Show("Xóa thành công 😉😉😉!", "Thông báo 😁😁😁");
             }
             LoadDgrNhanVien();
@@ -191,13 +197,7 @@ namespace _3_GUI
         }
         private void btn_Luu_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Bạn có muốn 🤔 Lưu Nhân viên 🤔 không ?", "Xác nhận",
-                    MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                _ibusNhanVien.Save(_tblNhanVien);
-                MessageBox.Show("Lưu thành công 😉😉😉!", "Thông báo 😁😁😁");
-            }
-            LoadDgrNhanVien();
+            _ibusNhanVien.Save(_tblNhanVien);
             ClearForm();
         }
         private void txt_SearchNhanVien_KeyUp(object sender, KeyEventArgs e)
@@ -293,6 +293,17 @@ namespace _3_GUI
                                         x.IdchucVu == 1 ? "Admin" : "Nhân viên", x.DienThoai, x.Cmnd, x.DiaChi);
             }
         }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            checkBox2.Checked = false;
+        }
+
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+            checkBox1.Checked = false;
+        }
+
         private void rbtn_LocNhanvien_CheckedChanged(object sender, EventArgs e)
         {
             var loc = (from a in _ibusNhanVien.GetlstNhanViens()
