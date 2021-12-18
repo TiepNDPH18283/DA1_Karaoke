@@ -341,5 +341,6 @@ namespace _3_GUI
                 FillDataChiTietHoaDonBan(_idHoaDonBan);
             }
         }
+
     }
 }
