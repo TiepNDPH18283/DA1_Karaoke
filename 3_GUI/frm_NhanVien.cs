@@ -52,13 +52,6 @@ namespace _3_GUI
         }
         void LoadDgrNhanVien()
         {
-            //DataGridViewComboBoxColumn combo = new DataGridViewComboBoxColumn();
-            //combo.HeaderText = "CHỨC NĂNG";
-            //combo.Items.Add("Add");
-            //combo.Items.Add("Update");
-            //combo.Items.Add("Remove");
-            //combo.Items.Add("Save");
-
             dgr_NhanVien.ColumnCount = 8;
             dgr_NhanVien.Columns[0].Name = "Mã NV";
             dgr_NhanVien.Columns[1].Name = "Họ Và Tên";
@@ -68,7 +61,6 @@ namespace _3_GUI
             dgr_NhanVien.Columns[5].Name = "Điện Thoại";
             dgr_NhanVien.Columns[6].Name = "CCCD";
             dgr_NhanVien.Columns[7].Name = "Địa Chỉ";
-            //dgr_NhanVien.Columns.Add(combo);
             dgr_NhanVien.Rows.Clear();
             foreach (var x in _ibusNhanVien.GetlstNhanViens())
             {
@@ -345,7 +337,7 @@ namespace _3_GUI
             {
                 //var chucvu = _ibusNhanVien.GetlstChucVus().FirstOrDefault(c => c.Id == x.IdchucVu);
                 dgr_NhanVien.Rows.Add(x.MaNv, x.Ho + " " + x.TenDem + " " + x.Ten, x.Username, x.GioiTinh == 1 ? "Nam" : "Nữ",
-                                        x.IdchucVu == 3 ? "Bồi bàn" : "Admin", x.DienThoai, x.Cmnd, x.DiaChi);
+                                        x.IdchucVu == 3 ? "Nhân viên kho" : "Admin", x.DienThoai, x.Cmnd, x.DiaChi);
             }
         }
 
