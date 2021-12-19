@@ -160,7 +160,7 @@ namespace _3_GUI_PresentationLayer
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Teal;
-            this.ClientSize = new System.Drawing.Size(1310, 740);
+            this.ClientSize = new System.Drawing.Size(1195, 740);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btn_Remove);
             this.Controls.Add(this.btn_Edit);

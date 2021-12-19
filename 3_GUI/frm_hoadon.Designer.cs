@@ -103,9 +103,9 @@ namespace _3_GUI
             this.label2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.Location = new System.Drawing.Point(10, 215);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(97, 23);
+            this.label2.Size = new System.Drawing.Size(106, 23);
             this.label2.TabIndex = 7;
-            this.label2.Text = "Tiền phòng";
+            this.label2.Text = "Tiền phòng :";
             // 
             // lb_tienphong
             // 
@@ -123,9 +123,9 @@ namespace _3_GUI
             this.label4.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label4.Location = new System.Drawing.Point(10, 525);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(83, 23);
+            this.label4.Size = new System.Drawing.Size(92, 23);
             this.label4.TabIndex = 7;
-            this.label4.Text = "Tổng tiền";
+            this.label4.Text = "Tổng tiền :";
             // 
             // bienlai
             // 
@@ -153,9 +153,9 @@ namespace _3_GUI
             this.label7.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label7.Location = new System.Drawing.Point(10, 475);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(102, 23);
+            this.label7.Size = new System.Drawing.Size(111, 23);
             this.label7.TabIndex = 7;
-            this.label7.Text = "Tiền dịch vụ";
+            this.label7.Text = "Tiền dịch vụ :";
             // 
             // lb_tong
             // 
@@ -173,9 +173,9 @@ namespace _3_GUI
             this.label1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(10, 110);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(103, 23);
+            this.label1.Size = new System.Drawing.Size(110, 23);
             this.label1.TabIndex = 7;
-            this.label1.Text = "khách hàng:";
+            this.label1.Text = "Khách hàng :";
             // 
             // lb_khachhang
             // 
@@ -203,15 +203,15 @@ namespace _3_GUI
             this.label9.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label9.Location = new System.Drawing.Point(10, 165);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(149, 23);
+            this.label9.Size = new System.Drawing.Size(154, 23);
             this.label9.TabIndex = 7;
-            this.label9.Text = "Thời gian bắt đầu:";
+            this.label9.Text = "Thời gian bắt đầu :";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label10.Location = new System.Drawing.Point(110, 746);
+            this.label10.Location = new System.Drawing.Point(111, 734);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(247, 20);
             this.label10.TabIndex = 7;
@@ -221,7 +221,7 @@ namespace _3_GUI
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label11.Location = new System.Drawing.Point(10, 746);
+            this.label11.Location = new System.Drawing.Point(11, 734);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(62, 20);
             this.label11.TabIndex = 7;
@@ -233,9 +233,9 @@ namespace _3_GUI
             this.label3.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.Location = new System.Drawing.Point(10, 190);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(152, 23);
+            this.label3.Size = new System.Drawing.Size(157, 23);
             this.label3.TabIndex = 7;
-            this.label3.Text = "Thời gian kết thúc:";
+            this.label3.Text = "Thời gian kết thúc :";
             // 
             // lb_timeend
             // 
@@ -263,9 +263,9 @@ namespace _3_GUI
             this.label8.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label8.Location = new System.Drawing.Point(10, 500);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(104, 23);
+            this.label8.Size = new System.Drawing.Size(113, 23);
             this.label8.TabIndex = 7;
-            this.label8.Text = "Chi phí khác";
+            this.label8.Text = "Chi phí khác :";
             // 
             // label12
             // 
@@ -282,9 +282,9 @@ namespace _3_GUI
             this.label13.AutoSize = true;
             this.label13.Location = new System.Drawing.Point(10, 669);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(86, 20);
+            this.label13.Size = new System.Drawing.Size(92, 20);
             this.label13.TabIndex = 7;
-            this.label13.Text = "số hóa đơn:";
+            this.label13.Text = "Số hóa đơn :";
             // 
             // lb_sohd
             // 
@@ -298,19 +298,19 @@ namespace _3_GUI
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(10, 689);
+            this.label16.Location = new System.Drawing.Point(12, 689);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(73, 20);
+            this.label16.Size = new System.Drawing.Size(80, 20);
             this.label16.TabIndex = 7;
-            this.label16.Text = "ngày, giờ:";
+            this.label16.Text = "Ngày, giờ :";
             // 
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label17.Location = new System.Drawing.Point(10, 645);
+            this.label17.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label17.Location = new System.Drawing.Point(6, 640);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(146, 20);
+            this.label17.Size = new System.Drawing.Size(180, 25);
             this.label17.TabIndex = 7;
             this.label17.Text = "Thông tin hóa đơn :";
             // 
@@ -394,10 +394,10 @@ namespace _3_GUI
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label25.Location = new System.Drawing.Point(10, 726);
+            this.label25.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label25.Location = new System.Drawing.Point(10, 709);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(124, 20);
+            this.label25.Size = new System.Drawing.Size(153, 25);
             this.label25.TabIndex = 7;
             this.label25.Text = "Thông tin quán :";
             // 
@@ -405,7 +405,7 @@ namespace _3_GUI
             // 
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label26.Location = new System.Drawing.Point(10, 766);
+            this.label26.Location = new System.Drawing.Point(10, 754);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(204, 20);
             this.label26.TabIndex = 7;
@@ -415,11 +415,12 @@ namespace _3_GUI
             // 
             this.label27.AutoSize = true;
             this.label27.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label27.Location = new System.Drawing.Point(9, 786);
+            this.label27.Location = new System.Drawing.Point(10, 774);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(281, 20);
+            this.label27.Size = new System.Drawing.Size(414, 40);
             this.label27.TabIndex = 7;
-            this.label27.Text = "Website :           http://www.musicshow.vn";
+            this.label27.Text = "Website :           http://diadiemvui.com/karaoke-family---216-\r\n                " +
+    "          phuc-tan---hoan-kiem---ha-noi";
             // 
             // phong
             // 
@@ -427,9 +428,9 @@ namespace _3_GUI
             this.phong.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.phong.Location = new System.Drawing.Point(10, 85);
             this.phong.Name = "phong";
-            this.phong.Size = new System.Drawing.Size(60, 23);
+            this.phong.Size = new System.Drawing.Size(69, 23);
             this.phong.TabIndex = 7;
-            this.phong.Text = "Phòng";
+            this.phong.Text = "Phòng :";
             // 
             // lb_phong
             // 
@@ -495,7 +496,7 @@ namespace _3_GUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(450, 811);
+            this.ClientSize = new System.Drawing.Size(450, 817);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.lb_khachhang);
             this.Controls.Add(this.label3);
