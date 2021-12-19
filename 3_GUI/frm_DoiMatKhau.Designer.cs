@@ -41,6 +41,7 @@ namespace _3_GUI
             this.cbx_Show_Pass = new System.Windows.Forms.CheckBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txt_taikhoan = new System.Windows.Forms.TextBox();
+            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -166,6 +167,19 @@ namespace _3_GUI
             this.txt_taikhoan.Size = new System.Drawing.Size(577, 38);
             this.txt_taikhoan.TabIndex = 20;
             // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button3.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button3.ForeColor = System.Drawing.Color.White;
+            this.button3.Location = new System.Drawing.Point(232, 462);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(211, 54);
+            this.button3.TabIndex = 17;
+            this.button3.Text = "Thoát";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // frm_DoiMatKhau
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -175,6 +189,7 @@ namespace _3_GUI
             this.Controls.Add(this.txt_taikhoan);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.cbx_Show_Pass);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.txt_NhapLaiPassNew);
@@ -206,5 +221,6 @@ namespace _3_GUI
         private System.Windows.Forms.CheckBox cbx_Show_Pass;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox txt_taikhoan;
+        private System.Windows.Forms.Button button3;
     }
 }

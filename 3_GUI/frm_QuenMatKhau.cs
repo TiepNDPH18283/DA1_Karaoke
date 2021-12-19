@@ -72,7 +72,7 @@ namespace _3_GUI
             {
                 to = txt_EmailQuenPass.Text;
                 dn = MessageBox.Show("Mã code chính xác 👍👍👍", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                frm_DoiMatKhau reset = new frm_DoiMatKhau(txt_EmailQuenPass.Text);
+                frm_DoiMatKhau reset = new frm_DoiMatKhau();
                 this.Hide();
                 reset.Show();
             }
@@ -80,6 +80,13 @@ namespace _3_GUI
             {
                 dn = MessageBox.Show("Mã code lấy lại mật khẩu sai !\n, Vui lòng kiểm tra lại !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void frm_QuenMatKhau_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            frm_Login frmLogin = new frm_Login();
+            frmLogin.Show();
+            this.Hide();
         }
     }
 }

@@ -177,6 +177,7 @@ namespace _3_GUI
             this.Name = "frm_QuenMatKhau";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quên Mật Khẩu";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frm_QuenMatKhau_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

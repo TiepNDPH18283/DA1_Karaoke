@@ -63,9 +63,9 @@ namespace _3_GUI
             dgr_NhanVien.Columns[6].Name = "CCCD";
             dgr_NhanVien.Columns[7].Name = "Địa Chỉ";
             dgr_NhanVien.Rows.Clear();
-            foreach (var x in _ibusNhanVien.GetlstNhanViens())
+            foreach (var x in _ibusNhanVien.GetlstNhanViens().Where(c=>c.IdtranngThai==1))
             {
-                var chucvu = _ibusNhanVien.GetlstChucVus().FirstOrDefault(c => c.Id == x.IdchucVu||c.IdtrangThai=="1");
+                var chucvu = _ibusNhanVien.GetlstChucVus().FirstOrDefault(c => c.Id == x.IdchucVu);
                 dgr_NhanVien.Rows.Add(x.MaNv, x.Ho + " " + x.TenDem + " " + x.Ten, x.Username ,x.GioiTinh == 1 ? "Nam" : "Nữ", chucvu.TenChucVu, x.DienThoai,
                                         x.Cmnd, x.DiaChi);
             }
@@ -167,7 +167,6 @@ namespace _3_GUI
             _tblNhanVien.Ten = txt_Ten.Text;
             _tblNhanVien.Username = txt_EmailLogin.Text;
             _tblNhanVien.GioiTinh = rbtn_Nam.Checked ? 1 : 0;
-            _tblNhanVien.GioiTinh = rbtn_Nu.Checked ? 1 : 0;
             _tblNhanVien.IdchucVuNavigation = _ibusNhanVien.GetlstChucVus().FirstOrDefault(c => c.TenChucVu == cbox_ChucVu.Text);
             _tblNhanVien.DienThoai = txt_DienThoai.Text;
             _tblNhanVien.Cmnd = txt_CCCD.Text;

@@ -24,6 +24,7 @@ namespace _3_GUI
             _ibus_Login_Service = new BUS_Login_Service();
             username = frm_QuenMatKhau.to;
             button2.Visible = true;
+            button3.Visible = false;
         }
         public frm_DoiMatKhau(string usernamee)
         {
@@ -32,6 +33,7 @@ namespace _3_GUI
             username = usernamee;
             txt_taikhoan.Text = usernamee;
             button2.Visible = false;
+            button3.Visible = true;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -77,6 +79,11 @@ namespace _3_GUI
         private void frm_DoiMatKhau_FormClosing(object sender, FormClosingEventArgs e)
         {
             
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

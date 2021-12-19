@@ -231,6 +231,7 @@ namespace _3_GUI
 
         private void dgrid_HoaDonNhap_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            if(e.RowIndex==-1) return;
             if (dgrid_HoaDonNhap.Rows[e.RowIndex].Cells[e.ColumnIndex].Selected &&
                 dgrid_HoaDonNhap.Columns[e.ColumnIndex].Name == "Update")
             {
@@ -277,6 +278,7 @@ namespace _3_GUI
 
         private void dgrid_MatHang_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            if(e.RowIndex==-1) return;
             if (dgrid_MatHang.Rows[e.RowIndex].Cells[e.ColumnIndex].Selected &&
                 dgrid_MatHang.Columns[e.ColumnIndex].Name == "Thêm vào hóa đơn")
             {
